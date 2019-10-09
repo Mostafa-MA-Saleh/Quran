@@ -15,7 +15,7 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
     @IBOutlet weak var playerButton: UIButton!
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    var surahNumber = 1
+    var surahNumber = 2
     var ayaNumber = 1
     var maxAya = 1
     var AyahInSura = 7 // this variable contian number of ayah in sura
@@ -92,17 +92,13 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
         present(alert, animated: true, completion: nil)
     }
 
-    private func display(_ s: Surah) {
-        var surah = s
+    private func display(_ surah: Surah) {
         maxAya = surah.ayahs.count + 1
-        if (surahNumber == 1){
-         surah.ayahs.remove(at: 0)
-        }
         let surahHTML = surah.toHTML()
         let surahMutableAttributedString = NSMutableAttributedString(attributedString: surahHTML.htmlToAttributedString!)
         let attributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: 0,
-            .font: UIFont(name: "me_quran", size: 23)!,
+            .font: UIFont(name: "Traditional Arabic", size: 23)!,
             .foregroundColor: UIColor.black,
         ]
         surahMutableAttributedString.addAttributes(attributes, range: NSRange(location: 0, length: surahMutableAttributedString.length))

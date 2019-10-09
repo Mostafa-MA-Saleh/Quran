@@ -16,11 +16,19 @@ struct Surah: Codable {
     func toHTML() -> String {
         var surahHtmlString = ""
         for ayah in ayahs {
-            let ayahNumberArabic = String(format: "%04X", ayah.numberInSurah + 1632)
-            let charCode = UInt32(ayahNumberArabic, radix: 16)!
-            let ayahNumberUnicode = "\u{FD3F}\(UnicodeScalar(charCode)!)\u{FD3E}"
-            surahHtmlString += "<a href=\"\(ayah.numberInSurah)\">\(ayah.text)</a>&nbsp; \(ayahNumberUnicode)&nbsp;"
+            let surahNumberString = String(ayah.numberInSurah).map { char -> String in
+                let ayahNumberArabic = String(format: "%04X", Int("\(char)")! + 1632)
+                let charCode = UInt32(ayahNumberArabic, radix: 16)!
+                return "\(UnicodeScalar(charCode)!)"
+            }.joined()
+            let ayahNumberUnicode = "\u{FD3F}\(surahNumberString)\u{FD3E}"
+            let string = "<a href=\"\(ayah.numberInSurah)\">\(ayah.text)</a>&nbsp; \(ayahNumberUnicode)&nbsp;"
+            if (37 ... 38).contains(ayah.numberInSurah) {
+                print(string)
+            }
+            surahHtmlString += string
         }
-        return "\(surahHtmlString.dropLast(6))\u{200F}"
+        surahHtmlString = surahHtmlString.dropLast(6).replacingOccurrences(of: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", with: "", range: surahHtmlString.range(of: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"))
+        return "\(surahHtmlString)\u{200F}"
     }
 }
