@@ -18,6 +18,8 @@
 		0660897D234D09950000E6BA /* Ayah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660897C234D09950000E6BA /* Ayah.swift */; };
 		06B12A2A234D1D60009AA719 /* me_quran.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06B12A28234D1D59009AA719 /* me_quran.ttf */; };
 		5EFA28AA970335D20216CD02 /* Pods_Quran.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0280B728F62AC9AB1A2FC160 /* Pods_Quran.framework */; };
+		849E9109234E174300FD4D15 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E9108234E174300FD4D15 /* ActivityIndicator.swift */; };
+		849E910B234E182800FD4D15 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E910A234E182800FD4D15 /* PlayerStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +37,11 @@
 		06608978234D08BC0000E6BA /* Surah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surah.swift; sourceTree = "<group>"; };
 		0660897C234D09950000E6BA /* Ayah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ayah.swift; sourceTree = "<group>"; };
 		06B12A28234D1D59009AA719 /* me_quran.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = me_quran.ttf; sourceTree = "<group>"; };
+		231BEF7B05174ADA225FD7B9 /* Pods-Quran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quran/Pods-Quran.release.xcconfig"; sourceTree = "<group>"; };
 		686929116F17D812FBF8A2EE /* Pods-Quran.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.debug.xcconfig"; path = "Target Support Files/Pods-Quran/Pods-Quran.debug.xcconfig"; sourceTree = "<group>"; };
+		849E9108234E174300FD4D15 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		849E910A234E182800FD4D15 /* PlayerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
+		FEDDE037BCFD0A06F44B8D72 /* Pods-Quran.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quran/Pods-Quran.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				063E5240234CF2C300671F80 /* AppDelegate.swift */,
+				849E9108234E174300FD4D15 /* ActivityIndicator.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 			children = (
 				06608978234D08BC0000E6BA /* Surah.swift */,
 				0660897C234D09950000E6BA /* Ayah.swift */,
+				849E910A234E182800FD4D15 /* PlayerStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +155,8 @@
 			children = (
 				686929116F17D812FBF8A2EE /* Pods-Quran.debug.xcconfig */,
 				021411AACF2E08B82EDB4E3E /* Pods-Quran.release.xcconfig */,
+				FEDDE037BCFD0A06F44B8D72 /* Pods-Quran.debug.xcconfig */,
+				231BEF7B05174ADA225FD7B9 /* Pods-Quran.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -277,7 +287,9 @@
 				06608977234D07EA0000E6BA /* QuranApiManager.swift in Sources */,
 				0660896F234CF54C0000E6BA /* String.swift in Sources */,
 				063E5245234CF2C300671F80 /* SurahViewController.swift in Sources */,
+				849E9109234E174300FD4D15 /* ActivityIndicator.swift in Sources */,
 				0660897D234D09950000E6BA /* Ayah.swift in Sources */,
+				849E910B234E182800FD4D15 /* PlayerStatus.swift in Sources */,
 				063E5241234CF2C300671F80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +445,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostafa.ma.saleh.Quran;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -453,7 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostafa.ma.saleh.Quran;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

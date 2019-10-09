@@ -11,7 +11,7 @@ struct Surah: Codable {
     let number: Int
     let name, englishName, englishNameTranslation, revelationType: String
     let numberOfAyahs: Int
-    let ayahs: [Ayah]
+    var ayahs: [Ayah]
 
     func toHTML() -> String {
         var surahHtmlString = ""
