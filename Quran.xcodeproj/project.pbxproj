@@ -20,6 +20,9 @@
 		5EFA28AA970335D20216CD02 /* Pods_Quran.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0280B728F62AC9AB1A2FC160 /* Pods_Quran.framework */; };
 		849E9109234E174300FD4D15 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E9108234E174300FD4D15 /* ActivityIndicator.swift */; };
 		849E910B234E182800FD4D15 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E910A234E182800FD4D15 /* PlayerStatus.swift */; };
+		849E910D234E2C8300FD4D15 /* MainSura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E910C234E2C8300FD4D15 /* MainSura.swift */; };
+		849E910F234E2E3F00FD4D15 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E910E234E2E3F00FD4D15 /* SearchViewController.swift */; };
+		849E9112234E30B000FD4D15 /* SuraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E9111234E30B000FD4D15 /* SuraTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		686929116F17D812FBF8A2EE /* Pods-Quran.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.debug.xcconfig"; path = "Target Support Files/Pods-Quran/Pods-Quran.debug.xcconfig"; sourceTree = "<group>"; };
 		849E9108234E174300FD4D15 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		849E910A234E182800FD4D15 /* PlayerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
+		849E910C234E2C8300FD4D15 /* MainSura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSura.swift; sourceTree = "<group>"; };
+		849E910E234E2E3F00FD4D15 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		849E9111234E30B000FD4D15 /* SuraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraTableViewCell.swift; sourceTree = "<group>"; };
 		FEDDE037BCFD0A06F44B8D72 /* Pods-Quran.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quran/Pods-Quran.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,7 @@
 		063E523F234CF2C300671F80 /* Quran */ = {
 			isa = PBXGroup;
 			children = (
+				849E9110234E309800FD4D15 /* Cell */,
 				06608973234D06A10000E6BA /* Extensions */,
 				06608974234D06AD0000E6BA /* ViewControllers */,
 				06608971234D05CD0000E6BA /* Layout */,
@@ -119,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				063E5244234CF2C300671F80 /* SurahViewController.swift */,
+				849E910E234E2E3F00FD4D15 /* SearchViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 				06608978234D08BC0000E6BA /* Surah.swift */,
 				0660897C234D09950000E6BA /* Ayah.swift */,
 				849E910A234E182800FD4D15 /* PlayerStatus.swift */,
+				849E910C234E2C8300FD4D15 /* MainSura.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +176,14 @@
 				0280B728F62AC9AB1A2FC160 /* Pods_Quran.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		849E9110234E309800FD4D15 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				849E9111234E30B000FD4D15 /* SuraTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,10 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849E910F234E2E3F00FD4D15 /* SearchViewController.swift in Sources */,
 				06608979234D08BC0000E6BA /* Surah.swift in Sources */,
 				06608977234D07EA0000E6BA /* QuranApiManager.swift in Sources */,
+				849E9112234E30B000FD4D15 /* SuraTableViewCell.swift in Sources */,
 				0660896F234CF54C0000E6BA /* String.swift in Sources */,
 				063E5245234CF2C300671F80 /* SurahViewController.swift in Sources */,
+				849E910D234E2C8300FD4D15 /* MainSura.swift in Sources */,
 				849E9109234E174300FD4D15 /* ActivityIndicator.swift in Sources */,
 				0660897D234D09950000E6BA /* Ayah.swift in Sources */,
 				849E910B234E182800FD4D15 /* PlayerStatus.swift in Sources */,
@@ -436,7 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8MG847C3TY;
+				DEVELOPMENT_TEAM = 42Y5S9AQ3P;
 				INFOPLIST_FILE = Quran/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -456,7 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8MG847C3TY;
+				DEVELOPMENT_TEAM = 42Y5S9AQ3P;
 				INFOPLIST_FILE = Quran/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
