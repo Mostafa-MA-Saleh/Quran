@@ -170,6 +170,15 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
                                 // after downloading your file you need to move it to your destination url
                                 try FileManager.default.moveItem(at: location, to: pathComponent)
                                 print("File moved to documents folder")
+                                self.player.play(url:pathComponent)
+                                DispatchQueue.main.async {
+                                    self.playerStatus = .playing
+                                    if let image = UIImage(named: "pause") {
+                                        self.playerButton.setImage(image, for: .normal)
+                                    }
+                                    self.loadingIndicator.stopAnimating()
+                                    self.playerButton.isHidden = false
+                                }
                                 let newAyah = self.ayaNumber + 1
                                 self.repeatDownload(sura: self.surahNumber, ayah: newAyah)
                             } catch {

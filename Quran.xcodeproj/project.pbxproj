@@ -455,6 +455,7 @@
 			baseConfigurationReference = 686929116F17D812FBF8A2EE /* Pods-Quran.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42Y5S9AQ3P;
 				INFOPLIST_FILE = Quran/Info.plist;
@@ -463,8 +464,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mostafa.ma.saleh.Quran;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quran.kareem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -475,6 +477,7 @@
 			baseConfigurationReference = 021411AACF2E08B82EDB4E3E /* Pods-Quran.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42Y5S9AQ3P;
 				INFOPLIST_FILE = Quran/Info.plist;
@@ -483,8 +486,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mostafa.ma.saleh.Quran;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quran.kareem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
