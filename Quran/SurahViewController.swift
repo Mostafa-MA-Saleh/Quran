@@ -126,7 +126,19 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
 
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
         if let ayahNumber = Int(URL.path.dropFirst()) {
-            
+            let alert = UIAlertController(title: "", message: "هل تريد الاستماع الى هذه الاية", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { action in
+                alert.dismiss(animated: true, completion: nil)
+                self.ayaNumber = ayahNumber
+                self.playerStatus = .playing
+                self.loadingIndicator.startAnimating()
+                self.playerButton.isHidden = true
+                self.play(from: self.ayaNumber)
+            }))
+            alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { action in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
         return false
     }
