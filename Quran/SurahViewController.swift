@@ -44,6 +44,7 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
         }
         player.p = self
     }
+    
   
     @IBAction func playButtonAction(_ sender: Any) {
 
@@ -98,7 +99,7 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
         let surahMutableAttributedString = NSMutableAttributedString(attributedString: surahHTML.htmlToAttributedString!)
         let attributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: 0,
-            .font: UIFont(name: "Traditional Arabic", size: 23)!,
+            .font: UIFont(name: "me_quran", size: 23)!,
             .foregroundColor: UIColor.black,
         ]
         surahMutableAttributedString.addAttributes(attributes, range: NSRange(location: 0, length: surahMutableAttributedString.length))
