@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="me_quran.ttf">
+            <string>me_quran</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Search View Controller-->
         <scene sceneID="kml-1X-yhP">
@@ -88,15 +93,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="dal-fV-kBM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKw-Qh-Z4q">
-                                <rect key="frame" x="77" y="80" width="221" height="29"/>
+                                <rect key="frame" x="77" y="104" width="221" height="29"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="dal-fV-kBM">
-                                <rect key="frame" x="8" y="125" width="359" height="492"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UW7-TV-8zv">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
@@ -104,8 +109,8 @@
                                         <rect key="frame" x="337" y="10" width="30" height="30"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القارى الشيخ : حسين الياخندى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-Ys-zhc">
-                                        <rect key="frame" x="8" y="13.5" width="231.5" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <rect key="frame" x="8" y="3" width="215" height="44"/>
+                                        <fontDescription key="fontDescription" name="me_quran" family="me_quran" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -137,7 +142,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-lS-xTu">
-                                <rect key="frame" x="37" y="152" width="301" height="436"/>
+                                <rect key="frame" x="37" y="149" width="301" height="439"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -149,18 +154,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UW7-TV-8zv" secondAttribute="trailing" id="0OW-VN-ZK4"/>
-                            <constraint firstItem="dal-fV-kBM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="6qX-EI-HQ2"/>
+                            <constraint firstItem="dal-fV-kBM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6qX-EI-HQ2"/>
                             <constraint firstItem="UW7-TV-8zv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CIo-Yj-lwN"/>
                             <constraint firstItem="YlO-lS-xTu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="Fmj-MS-ohW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dal-fV-kBM" secondAttribute="trailing" constant="8" id="Lfj-SE-WVJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dal-fV-kBM" secondAttribute="trailing" id="Lfj-SE-WVJ"/>
+                            <constraint firstItem="dal-fV-kBM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MNh-yM-ZR0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UW7-TV-8zv" secondAttribute="bottom" id="Qtg-B4-JJd"/>
                             <constraint firstItem="dKw-Qh-Z4q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vxa-cN-xkV"/>
                             <constraint firstItem="UW7-TV-8zv" firstAttribute="top" secondItem="YlO-lS-xTu" secondAttribute="bottom" constant="29" id="XaK-PZ-wgM"/>
-                            <constraint firstItem="dal-fV-kBM" firstAttribute="top" secondItem="dKw-Qh-Z4q" secondAttribute="bottom" constant="16" id="a3L-5g-bEX"/>
-                            <constraint firstItem="dKw-Qh-Z4q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="lrB-zw-iyn"/>
+                            <constraint firstItem="dKw-Qh-Z4q" firstAttribute="top" secondItem="dal-fV-kBM" secondAttribute="top" constant="40" id="agI-xW-Ngw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YlO-lS-xTu" secondAttribute="trailing" constant="37" id="mcG-UA-iL0"/>
                             <constraint firstItem="UW7-TV-8zv" firstAttribute="top" secondItem="dal-fV-kBM" secondAttribute="bottom" id="s4s-uk-c55"/>
-                            <constraint firstItem="YlO-lS-xTu" firstAttribute="top" secondItem="dKw-Qh-Z4q" secondAttribute="bottom" constant="43" id="uv5-aP-9Iz"/>
+                            <constraint firstItem="YlO-lS-xTu" firstAttribute="top" secondItem="dKw-Qh-Z4q" secondAttribute="bottom" constant="16" id="uv5-aP-9Iz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -168,11 +173,12 @@
                         <outlet property="loadingIndicator" destination="GOc-Ds-ymw" id="Utl-mk-GhB"/>
                         <outlet property="playerButton" destination="jel-zc-3jE" id="pTb-PY-yqx"/>
                         <outlet property="textView" destination="YlO-lS-xTu" id="NIM-oN-o5Z"/>
+                        <outlet property="titleLabel" destination="dKw-Qh-Z4q" id="iaK-59-4J9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="112"/>
+            <point key="canvasLocation" x="1197.5999999999999" y="111.99400299850076"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1mq-8p-rhq">
@@ -194,7 +200,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="frame" width="287.25" height="406.5"/>
+        <image name="frame" width="456" height="673"/>
         <image name="play" width="48" height="48"/>
     </resources>
 </document>

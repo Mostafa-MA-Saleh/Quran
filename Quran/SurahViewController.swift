@@ -14,8 +14,9 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
     @IBOutlet var textView: UITextView!
     @IBOutlet weak var playerButton: UIButton!
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    var surahNumber = 2
+    var surahNumber = 1
     var ayaNumber = 1
     var maxAya = 1
     var AyahInSura = 7 // this variable contian number of ayah in sura
@@ -43,6 +44,7 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
             }
         }
         player.p = self
+        titleLabel.font = UIFont(name: "me_quran", size: 25)!
     }
     
   
@@ -97,11 +99,15 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
         maxAya = surah.ayahs.count + 1
         let surahHTML = surah.toHTML()
         let surahMutableAttributedString = NSMutableAttributedString(attributedString: surahHTML.htmlToAttributedString!)
+        var fontSize = CGFloat(23)
+        if (surah.numberOfAyahs < 10 ){
+            fontSize = CGFloat(26)
+        }
         let attributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: 0,
-            .font: UIFont(name: "me_quran", size: 23)!,
+            .font: UIFont(name: "me_quran", size: fontSize)!,
             .foregroundColor: UIColor.black,
-        ]
+            ]
         surahMutableAttributedString.addAttributes(attributes, range: NSRange(location: 0, length: surahMutableAttributedString.length))
         textView.attributedText = surahMutableAttributedString
         textView.linkTextAttributes = attributes
@@ -144,7 +150,7 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
     private func downloadFile(){
         createFolderQuran();
         createFolderSura(sura: surahNumber)
-        guard let audioUrl =  URL(string: "https://nuts-realignments.000webhostapp.com/test2/\(surahNumber)/\(ayaNumber).mp3") else {return}
+        guard let audioUrl =  URL(string: "http://husseinelyakhendy.com/test2/\(surahNumber)/\(ayaNumber).mp3") else {return}
        
                 let path = NSSearchPathForDirectoriesInDomains(.musicDirectory, .userDomainMask, true)[0] as String
                 let url = NSURL(fileURLWithPath: path)
@@ -192,6 +198,12 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
                                 self.repeatDownload(sura: self.surahNumber, ayah: newAyah)
                             } catch {
                                 print(error)
+                                self.playerStatus = .stop
+                                if let image = UIImage(named: "play") {
+                                    self.playerButton.setImage(image, for: .normal)
+                                }
+                                self.loadingIndicator.stopAnimating()
+                                self.playerButton.isHidden = false
                             }
                             }.resume()
                     }
@@ -206,7 +218,7 @@ class SurahViewController: UIViewController, UITextViewDelegate ,PMyPlayer {
     
     func repeatDownload(sura:Int,ayah:Int){
         print("sura= \(sura) aya = \(ayah)")
-        guard let audioUrl =  URL(string: "https://nuts-realignments.000webhostapp.com/test2/\(sura)/\(ayah).mp3") else {return}
+        guard let audioUrl =  URL(string: "http://husseinelyakhendy.com/test2/\(sura)/\(ayah).mp3") else {return}
             if (ayah <= maxAya){
                 let path = NSSearchPathForDirectoriesInDomains(.musicDirectory, .userDomainMask, true)[0] as String
                 let url = NSURL(fileURLWithPath: path)
