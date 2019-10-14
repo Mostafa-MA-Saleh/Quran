@@ -4,26 +4,26 @@ PODS:
     - Alamofire (~> 4.8)
   - CodableAlamofire (1.1.2):
     - Alamofire (~> 4.0)
-  - SwiftAudio (0.11.1)
+  - Soundable (1.1.0)
 
 DEPENDENCIES:
   - AlamofireNetworkActivityIndicator
   - CodableAlamofire
-  - SwiftAudio
+  - Soundable
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireNetworkActivityIndicator
     - CodableAlamofire
-    - SwiftAudio
+    - Soundable
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
-  SwiftAudio: f71f0a94068539bf7819b6cc753c0e5dec89621f
+  Soundable: 335cce529d674745cd01f054eeeefe20360ce0e1
 
-PODFILE CHECKSUM: 1210e330a01b360cddb01aa8ba673a5488e7c275
+PODFILE CHECKSUM: 43a854cc1da663a0f9e23eedc0ce4061b419dc1f
 
 COCOAPODS: 1.8.3

@@ -6,7 +6,7 @@
 //
 
 import AVFoundation
-import SwiftAudio
+import Soundable
 import UIKit
 
 class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
@@ -15,7 +15,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
-    var surahNumber = 2
+    var surahNumber = 1
     var ayaNumber = 1
     var maxAya = 1
     var AyahInSura = 7 // this variable contian number of ayah in sura
@@ -42,6 +42,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             }
         }
         player.p = self
+        player.vc = self
         titleLabel.font = UIFont(name: "me_quran", size: 25)!
     }
     
@@ -156,8 +157,11 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             let fileManager = FileManager.default
             if fileManager.fileExists(atPath: filePath) {
                 print("FILE AVAILABLE")
-
-                player.play(url: pathComponent)
+                if (self.ayaNumber > 5){
+                    player.play2(url: pathComponent)
+                }else {
+                    player.play(url: pathComponent)
+                }
                 DispatchQueue.main.async {
                     self.playerStatus = .playing
                     if let image = UIImage(named: "pause") {
@@ -192,7 +196,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                         let newAyah = self.ayaNumber + 1
                         self.repeatDownload(sura: self.surahNumber, ayah: newAyah)
                     } catch {
-                        print(error)
+                        self.printLN(error.localizedDescription)
                         self.playerStatus = .stop
                         DispatchQueue.main.sync {
                             if let image = UIImage(named: "play") {
@@ -205,10 +209,16 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                 }.resume()
             }
         } else {
-            print("FILE PATH NOT AVAILABLE")
+            printLN("FILE PATH NOT AVAILABLE")
         }
     }
 
+    func printLN(_ msg:String){
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
+       
+        alert.addAction(UIAlertAction(title: "الغاء", style: .destructive, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     func repeatDownload(sura: Int, ayah: Int) {
         print("sura= \(sura) aya = \(ayah)")
         guard let audioUrl = URL(string: "http://husseinelyakhendy.com/test2/\(sura)/\(ayah).mp3") else { return }
@@ -222,7 +232,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                     let newAyah = ayah + 1
                     repeatDownload(sura: sura, ayah: newAyah)
                 } else {
-                    print("FILE NOT AVAILABLE")
+                    printLN("FILE NOT AVAILABLE")
                     // you can use NSURLSession.sharedSession to download the data asynchronously
 
                     URLSession.shared.downloadTask(with: audioUrl) { [weak self] location, _, error in
@@ -234,13 +244,13 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                             let newAyah = ayah + 1
                             self.repeatDownload(sura: sura, ayah: newAyah)
                         } catch {
-                            print(error)
+                            self.printLN(error.localizedDescription)
                         }
                     }.resume()
                 }
 
             } else {
-                print("FILE PATH NOT AVAILABLE")
+                printLN("FILE PATH NOT AVAILABLE")
             }
         }
     }
@@ -255,7 +265,11 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             if fileManager.fileExists(atPath: filePath) {
                 print("FILE AVAILABLE")
 
-                player.play(url: pathComponent)
+                if (self.ayaNumber > 5){
+                    player.play2(url: pathComponent)
+                }else {
+                    player.play(url: pathComponent)
+                }
             } else {
                 print("FILE NOT AVAILABLE")
                 // you can use NSURLSession.sharedSession to download the data asynchronously
@@ -268,7 +282,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                             try FileManager.default.moveItem(at: location, to: pathComponent)
                             print("File moved to documents folder")
                         } catch {
-                            print(error)
+                            self.printLN(error.localizedDescription)
                         }
                     }.resume()
                 }
@@ -287,7 +301,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                     try fileManager.createDirectory(atPath: filePath.path, withIntermediateDirectories: true, attributes: nil)
                     print(" created ")
                 } catch {
-                    print(error)
+                    printLN(error.localizedDescription)
                 }
             }
             print("Document directory is \(filePath)")
@@ -303,7 +317,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                     try fileManager.createDirectory(atPath: filePath.path, withIntermediateDirectories: true, attributes: nil)
                     print(" created ")
                 } catch {
-                    print("Couldn't create document directory")
+                    printLN("Couldn't create document directory")
                 }
             }
             print("Document directory is \(filePath)")
@@ -337,19 +351,40 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 class MyPlayer2: NSObject, AVAudioPlayerDelegate {
     var player: AVAudioPlayer?
     var p: PMyPlayer?
-
+    var vc:UIViewController?
+    
     func play(url: URL) {
+        
+        
+        
         do {
             player = try AVAudioPlayer(contentsOf: url)
+            try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
 
             guard let player = player else { return }
             player.prepareToPlay()
             player.play()
             player.delegate = self
         } catch let error as NSError {
-            print(error.description)
-            print(error.localizedDescription)
+            self.printLN(error.description)
+            self.printLN(error.localizedDescription)
         }
+        
+    }
+    
+    
+    func printLN(_ msg:String){
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "الغاء", style: .destructive, handler: nil))
+        vc!.present(alert, animated: true, completion: nil)
+    }
+    func play2(url:URL){
+        Soundable.stopAll()
+        Soundable.muteAll()
+        
+        let sound = Sound(url: url)
+        sound.play()
     }
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
