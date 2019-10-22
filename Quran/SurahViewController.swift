@@ -45,10 +45,17 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         player.vc = self
         titleLabel.font = UIFont(name: "me_quran", size: 25)!
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         player.stop()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tafseerViewController = segue.destination as? TafseerViewController, let ayahNumber = sender as? Int {
+            tafseerViewController.surahNumber = surahNumber
+            tafseerViewController.ayahNumber = ayahNumber
+        }
     }
 
     @IBAction func playButtonAction(_ sender: Any) {
@@ -129,20 +136,29 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
         if let ayahNumber = Int(URL.path.dropFirst()) {
-            let alert = UIAlertController(title: "", message: "هل تريد الاستماع الى هذه الاية", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { [weak self] _ in
-                guard let self = self else { return }
-                alert.dismiss(animated: true, completion: nil)
-                self.ayaNumber = ayahNumber
-                self.playerStatus = .playing
-                self.loadingIndicator.startAnimating()
-                self.playerButton.isHidden = true
-                self.play(from: self.ayaNumber)
-            }))
-            alert.addAction(UIAlertAction(title: "لا", style: .destructive, handler: nil))
-            present(alert, animated: true, completion: nil)
+            displayOptions(for: ayahNumber)
         }
         return false
+    }
+
+    private func displayOptions(for ayahNumber: Int) {
+        let alert = UIAlertController(title: "خيارات الاية", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "استماع", style: .default) { [weak self] _ in
+            self?.play(ayahNumber: ayahNumber)
+        })
+        alert.addAction(UIAlertAction(title: "تفسير", style: .default) { [weak self] _ in
+            self?.performSegue(withIdentifier: "TafseerSegue", sender: ayahNumber)
+        })
+        alert.addAction(UIAlertAction(title: "الغاء", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func play(ayahNumber: Int) {
+        ayaNumber = ayahNumber
+        playerStatus = .playing
+        loadingIndicator.startAnimating()
+        playerButton.isHidden = true
+        play(from: ayaNumber)
     }
 
     private func downloadFile() {
@@ -157,9 +173,9 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             let fileManager = FileManager.default
             if fileManager.fileExists(atPath: filePath) {
                 print("FILE AVAILABLE")
-                if (self.ayaNumber > 5){
+                if ayaNumber > 5 {
                     player.play2(url: pathComponent)
-                }else {
+                } else {
                     player.play(url: pathComponent)
                 }
                 DispatchQueue.main.async {
@@ -213,12 +229,15 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         }
     }
 
-    func printLN(_ msg:String){
-        let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
-       
-        alert.addAction(UIAlertAction(title: "الغاء", style: .destructive, handler: nil))
-        present(alert, animated: true, completion: nil)
+    func printLN(_ msg: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "الغاء", style: .destructive, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
+
     func repeatDownload(sura: Int, ayah: Int) {
         print("sura= \(sura) aya = \(ayah)")
         guard let audioUrl = URL(string: "http://husseinelyakhendy.com/test2/\(sura)/\(ayah).mp3") else { return }
@@ -265,9 +284,9 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             if fileManager.fileExists(atPath: filePath) {
                 print("FILE AVAILABLE")
 
-                if (self.ayaNumber > 5){
+                if ayaNumber > 5 {
                     player.play2(url: pathComponent)
-                }else {
+                } else {
                     player.play(url: pathComponent)
                 }
             } else {
@@ -351,12 +370,9 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 class MyPlayer2: NSObject, AVAudioPlayerDelegate {
     var player: AVAudioPlayer?
     var p: PMyPlayer?
-    var vc:UIViewController?
-    
+    var vc: UIViewController?
+
     func play(url: URL) {
-        
-        
-        
         do {
             player = try AVAudioPlayer(contentsOf: url)
             try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
@@ -369,20 +385,19 @@ class MyPlayer2: NSObject, AVAudioPlayerDelegate {
             self.printLN(error.description)
             self.printLN(error.localizedDescription)
         }
-        
     }
-    
-    
-    func printLN(_ msg:String){
+
+    func printLN(_ msg: String) {
         let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
-        
+
         alert.addAction(UIAlertAction(title: "الغاء", style: .destructive, handler: nil))
         vc!.present(alert, animated: true, completion: nil)
     }
-    func play2(url:URL){
+
+    func play2(url: URL) {
         Soundable.stopAll()
         Soundable.muteAll()
-        
+
         let sound = Sound(url: url)
         sound.play()
     }
