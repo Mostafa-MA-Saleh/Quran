@@ -10,6 +10,10 @@ import UIKit
 class SuraTableViewCell: UITableViewCell {
 
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var ayaNumberLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
+    
+    @IBOutlet weak var typeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
