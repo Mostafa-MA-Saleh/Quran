@@ -50,25 +50,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-Ov-7Tu">
-                                                    <rect key="frame" x="15" y="11" width="284" height="25.5"/>
+                                                    <rect key="frame" x="15" y="11" width="284" height="20"/>
                                                     <fontDescription key="fontDescription" name="Traditional-Arabic" family="Traditional Arabic" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKf-pN-svR">
-                                                    <rect key="frame" x="15" y="36.5" width="284" height="25.5"/>
+                                                    <rect key="frame" x="15" y="31" width="284" height="20"/>
                                                     <fontDescription key="fontDescription" name="Traditional-Arabic" family="Traditional Arabic" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HG-Xy-RAm">
-                                                    <rect key="frame" x="253" y="44.5" width="42" height="25.5"/>
+                                                    <rect key="frame" x="253" y="47" width="42" height="20"/>
                                                     <fontDescription key="fontDescription" name="Traditional-Arabic" family="Traditional Arabic" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THb-1K-xcw">
-                                                    <rect key="frame" x="15" y="62" width="284" height="21"/>
+                                                    <rect key="frame" x="15" y="51" width="284" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="Traditional-Arabic" family="Traditional Arabic" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -124,10 +124,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="فهرس القران الكريم" id="Gti-Yr-i1B">
                         <barButtonItem key="backBarButtonItem" title=" " id="pCF-ed-O6q"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="5z6-0h-1YT">
+                            <connections>
+                                <action selector="didClickBookmark" destination="mer-bQ-TbM" id="aLg-2B-QEp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchTextField" destination="EnS-X3-Xb3" id="h6Q-OY-5lr"/>
                         <outlet property="tableView" destination="fYy-nD-lpg" id="luD-1g-KYx"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="BookmarkSegue" id="r9x-RX-Vt1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKM-y4-FoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -366,4 +372,7 @@
         <image name="frame_sura" width="383" height="542"/>
         <image name="play" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="r9x-RX-Vt1"/>
+    </inferredMetricsTieBreakers>
 </document>

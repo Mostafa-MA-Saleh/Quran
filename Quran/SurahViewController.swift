@@ -15,12 +15,17 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+
+    static let KEY_BOOKMARK_POSITION = "KeyBookmarkPosition"
+    static let KEY_BOOKMARK_SURAH = "KeyBookmarkSurah"
+
     var surahNumber = 1
     var ayaNumber = 1
     var maxAya = 1
     var AyahInSura = 7 // this variable contian number of ayah in sura
     var player = MyPlayer2()
     var activityIndicator: ActivityIndicator?
+    var isOpenedWithBookmark = false
 
     var playerStatus = PlayerStatus.stop
 
@@ -41,6 +46,9 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 
         activityIndicator = ActivityIndicator(view: view, navigationController: nil, tabBarController: nil)
         activityIndicator?.showActivityIndicator()
+        if isOpenedWithBookmark {
+            surahNumber = UserDefaults.standard.integer(forKey: SurahViewController.KEY_BOOKMARK_SURAH)
+        }
         QuranApiManager.shared.fetch(surahNumber: surahNumber) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -131,6 +139,10 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         let textRange = textView.textRange(from: textView.beginningOfDocument, to: textView.endOfDocument)!
         textView.setBaseWritingDirection(.rightToLeft, for: textRange)
         textView.textAlignment = .justified
+        if isOpenedWithBookmark {
+            let savedPosition = UserDefaults.standard.float(forKey: SurahViewController.KEY_BOOKMARK_POSITION)
+            textView.contentOffset = CGPoint(x: 0, y: Int(savedPosition))
+        }
     }
 
     private func play(from ayahNumber: Int) {
@@ -158,6 +170,14 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         })
         alert.addAction(UIAlertAction(title: "تفسير", style: .default) { [weak self] _ in
             self?.performSegue(withIdentifier: "TafseerSegue", sender: ayahNumber)
+        })
+        alert.addAction(UIAlertAction(title: "علامة", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            self.changeFontSize(to: 23)
+            let position = Float(self.textView.contentOffset.y)
+            UserDefaults.standard.set(position, forKey: SurahViewController.KEY_BOOKMARK_POSITION)
+            UserDefaults.standard.set(self.surahNumber, forKey: SurahViewController.KEY_BOOKMARK_SURAH)
+            self.changeFontSize(to: self.fontSize)
         })
         alert.addAction(UIAlertAction(title: "الغاء", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -371,16 +391,18 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
     }
 
     @IBAction func didClickSmallerFont() {
-        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText!)
         fontSize -= 2
-        attributedString.addAttribute(.font, value: UIFont(name: fontName, size: fontSize)!, range: NSRange(location: 0, length: attributedString.length))
-        textView.attributedText = attributedString
+        changeFontSize(to: fontSize)
     }
 
     @IBAction func didClickLargerFont() {
-        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText!)
         fontSize += 2
-        attributedString.addAttribute(.font, value: UIFont(name: fontName, size: fontSize)!, range: NSRange(location: 0, length: attributedString.length))
+        changeFontSize(to: fontSize)
+    }
+
+    private func changeFontSize(to newSize: CGFloat) {
+        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText!)
+        attributedString.addAttribute(.font, value: UIFont(name: fontName, size: newSize)!, range: NSRange(location: 0, length: attributedString.length))
         textView.attributedText = attributedString
     }
 }

@@ -24,8 +24,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let surahViewController = segue.destination as? SurahViewController, let rowNumber = tableView.indexPathForSelectedRow?.row {
-            surahViewController.surahNumber = Int(filteredSurahArray[rowNumber].index)!
+        if let surahViewController = segue.destination as? SurahViewController {
+            if let rowNumber = tableView.indexPathForSelectedRow?.row {
+                surahViewController.surahNumber = Int(filteredSurahArray[rowNumber].index)!
+            } else {
+                surahViewController.isOpenedWithBookmark = true
+            }
         }
     }
 
@@ -61,5 +65,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             filteredSurahArray.append(contentsOf: surahArray.filter { $0.titleAr.contains(textField.text!) })
         }
         tableView.reloadSections([0], with: .automatic)
+    }
+
+    @IBAction func didClickBookmark() {
+        if UserDefaults.standard.object(forKey: SurahViewController.KEY_BOOKMARK_SURAH) != nil {
+            performSegue(withIdentifier: "BookmarkSegue", sender: self)
+        }
     }
 }
