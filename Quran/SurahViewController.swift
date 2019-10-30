@@ -24,6 +24,18 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 
     var playerStatus = PlayerStatus.stop
 
+    private var fontSize: CGFloat = 23 {
+        didSet {
+            if fontSize > 50 {
+                fontSize = 50
+            } else if fontSize < 10 {
+                fontSize = 10
+            }
+        }
+    }
+
+    private let fontName = "me_quran"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -106,13 +118,9 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         maxAya = surah.ayahs.count + 1
         let surahHTML = surah.toHTML()
         let surahMutableAttributedString = NSMutableAttributedString(attributedString: surahHTML.htmlToAttributedString!)
-        var fontSize = CGFloat(23)
-        if surah.numberOfAyahs < 10 {
-            fontSize = CGFloat(26)
-        }
         let attributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: 0,
-            .font: UIFont(name: "me_quran", size: fontSize)!,
+            .font: UIFont(name: fontName, size: fontSize)!,
             .foregroundColor: UIColor.black,
         ]
         surahMutableAttributedString.addAttributes(attributes, range: NSRange(location: 0, length: surahMutableAttributedString.length))
@@ -154,6 +162,9 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
     }
 
     private func play(ayahNumber: Int) {
+        if playerStatus == .playing || player.player?.isPlaying == true {
+            player.stop()
+        }
         ayaNumber = ayahNumber
         playerStatus = .playing
         loadingIndicator.startAnimating()
@@ -173,11 +184,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             let fileManager = FileManager.default
             if fileManager.fileExists(atPath: filePath) {
                 print("FILE AVAILABLE")
-                if ayaNumber > 5 {
-                    player.play2(url: pathComponent)
-                } else {
-                    player.play(url: pathComponent)
-                }
+                player.play(url: pathComponent)
                 DispatchQueue.main.async {
                     self.playerStatus = .playing
                     if let image = UIImage(named: "pause") {
@@ -283,12 +290,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             let fileManager = FileManager.default
             if fileManager.fileExists(atPath: filePath) {
                 print("FILE AVAILABLE")
-
-                if ayaNumber > 5 {
-                    player.play2(url: pathComponent)
-                } else {
-                    player.play(url: pathComponent)
-                }
+                player.play(url: pathComponent)
             } else {
                 print("FILE NOT AVAILABLE")
                 // you can use NSURLSession.sharedSession to download the data asynchronously
@@ -365,6 +367,20 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         effectView.contentView.addSubview(strLabel)
         view.addSubview(effectView)
     }
+
+    @IBAction func didClickSmallerFont() {
+        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText!)
+        fontSize -= 2
+        attributedString.addAttribute(.font, value: UIFont(name: fontName, size: fontSize)!, range: NSRange(location: 0, length: attributedString.length))
+        textView.attributedText = attributedString
+    }
+
+    @IBAction func didClickLargerFont() {
+        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText!)
+        fontSize += 2
+        attributedString.addAttribute(.font, value: UIFont(name: fontName, size: fontSize)!, range: NSRange(location: 0, length: attributedString.length))
+        textView.attributedText = attributedString
+    }
 }
 
 class MyPlayer2: NSObject, AVAudioPlayerDelegate {
@@ -392,14 +408,6 @@ class MyPlayer2: NSObject, AVAudioPlayerDelegate {
 
         alert.addAction(UIAlertAction(title: "الغاء", style: .destructive, handler: nil))
         vc!.present(alert, animated: true, completion: nil)
-    }
-
-    func play2(url: URL) {
-        Soundable.stopAll()
-        Soundable.muteAll()
-
-        let sound = Sound(url: url)
-        sound.play()
     }
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
