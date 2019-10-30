@@ -11,6 +11,9 @@
         <array key="ArbFONTS-TRAD.ttf">
             <string>Traditional-Arabic</string>
         </array>
+        <array key="QUR_STD.TTF">
+            <string>Quran-Standard</string>
+        </array>
         <array key="me_quran.ttf">
             <string>me_quran</string>
         </array>
@@ -143,8 +146,8 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="573"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKw-Qh-Z4q">
-                                <rect key="frame" x="73.5" y="84" width="228.5" height="29"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <rect key="frame" x="87" y="84" width="201" height="33.5"/>
+                                <fontDescription key="fontDescription" name="Quran-Standard" family="Quran Standard" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -216,7 +219,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-lS-xTu">
-                                <rect key="frame" x="37" y="129" width="301" height="459"/>
+                                <rect key="frame" x="37" y="133.5" width="301" height="454.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

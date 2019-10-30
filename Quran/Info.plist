@@ -37,8 +37,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>ArbFONTS-TRAD.ttf</string>
-		<string>me_quran.ttf</string>
+		<string>QUR_STD.TTF</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

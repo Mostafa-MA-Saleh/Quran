@@ -34,7 +34,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         }
     }
 
-    private let fontName = "me_quran"
+    private lazy var fontName = titleLabel.font.fontName
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,6 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         }
         player.p = self
         player.vc = self
-        titleLabel.font = UIFont(name: "me_quran", size: 25)!
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -118,7 +117,10 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         maxAya = surah.ayahs.count + 1
         let surahHTML = surah.toHTML()
         let surahMutableAttributedString = NSMutableAttributedString(attributedString: surahHTML.htmlToAttributedString!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 7
         let attributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle,
             .underlineStyle: 0,
             .font: UIFont(name: fontName, size: fontSize)!,
             .foregroundColor: UIColor.black,
