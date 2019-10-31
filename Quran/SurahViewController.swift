@@ -6,7 +6,6 @@
 //
 
 import AVFoundation
-import Soundable
 import UIKit
 
 class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
@@ -43,7 +42,6 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         activityIndicator = ActivityIndicator(view: view, navigationController: nil, tabBarController: nil)
         activityIndicator?.showActivityIndicator()
         if isOpenedWithBookmark {
@@ -127,12 +125,16 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         let surahMutableAttributedString = NSMutableAttributedString(attributedString: surahHTML.htmlToAttributedString!)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 7
-        let attributes: [NSAttributedString.Key: Any] = [
+        var attributes: [NSAttributedString.Key: Any] = [
             .paragraphStyle: paragraphStyle,
             .underlineStyle: 0,
             .font: UIFont(name: fontName, size: fontSize)!,
-            .foregroundColor: UIColor.black,
         ]
+        if #available(iOS 13.0, *) {
+            attributes[.foregroundColor] = UIColor.label
+        } else {
+            attributes[.foregroundColor] = UIColor.black
+        }
         surahMutableAttributedString.addAttributes(attributes, range: NSRange(location: 0, length: surahMutableAttributedString.length))
         textView.attributedText = surahMutableAttributedString
         textView.linkTextAttributes = attributes

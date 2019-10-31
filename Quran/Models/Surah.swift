@@ -28,7 +28,8 @@ struct Surah: Codable {
             }
             surahHtmlString += string
         }
-        surahHtmlString = surahHtmlString.dropLast(6).replacingOccurrences(of: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", with: "", range: surahHtmlString.range(of: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"))
+        let header =  "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
+        surahHtmlString = surahHtmlString.dropLast(6).replacingOccurrences(of: header, with: "", range: surahHtmlString.range(of: header))
         return "\(surahHtmlString)\u{200F}"
     }
 }

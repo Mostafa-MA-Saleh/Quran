@@ -9,6 +9,5 @@ target 'Quran' do
   # Pods for Quran
   pod 'CodableAlamofire'
   pod 'AlamofireNetworkActivityIndicator'
-  pod 'Soundable'
 
 end

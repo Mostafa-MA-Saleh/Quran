@@ -12,6 +12,7 @@
 		063E5248234CF2C300671F80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E5246234CF2C300671F80 /* Main.storyboard */; };
 		063E524A234CF2C800671F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063E5249234CF2C800671F80 /* Assets.xcassets */; };
 		063E524D234CF2C800671F80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E524B234CF2C800671F80 /* LaunchScreen.storyboard */; };
+		063EA133236B8FAA00D37AA0 /* NonPreviewTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063EA132236B8FAA00D37AA0 /* NonPreviewTextView.swift */; };
 		0660896F234CF54C0000E6BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660896E234CF54C0000E6BA /* String.swift */; };
 		06608977234D07EA0000E6BA /* QuranApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06608976234D07EA0000E6BA /* QuranApiManager.swift */; };
 		06608979234D08BC0000E6BA /* Surah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06608978234D08BC0000E6BA /* Surah.swift */; };
@@ -36,6 +37,7 @@
 		063E5244234CF2C300671F80 /* SurahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahViewController.swift; sourceTree = "<group>"; };
 		063E5249234CF2C800671F80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		063E524E234CF2C800671F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		063EA132236B8FAA00D37AA0 /* NonPreviewTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonPreviewTextView.swift; sourceTree = "<group>"; };
 		064783F3236A3B2B008BAC84 /* QUR_STD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = QUR_STD.TTF; sourceTree = "<group>"; };
 		0660896E234CF54C0000E6BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		06608976234D07EA0000E6BA /* QuranApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranApiManager.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				063E5240234CF2C300671F80 /* AppDelegate.swift */,
 				849E9108234E174300FD4D15 /* ActivityIndicator.swift */,
 				06CAA76E2369C2E20094CA7A /* QuranIndex.swift */,
+				063EA132236B8FAA00D37AA0 /* NonPreviewTextView.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063EA133236B8FAA00D37AA0 /* NonPreviewTextView.swift in Sources */,
 				849E910F234E2E3F00FD4D15 /* SearchViewController.swift in Sources */,
 				06608979234D08BC0000E6BA /* Surah.swift in Sources */,
 				06608977234D07EA0000E6BA /* QuranApiManager.swift in Sources */,
@@ -402,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -456,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -473,14 +477,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42Y5S9AQ3P;
+				DEVELOPMENT_TEAM = 8MG847C3TY;
 				INFOPLIST_FILE = Quran/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quran.mainqurann;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quran.mainqurann-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -495,14 +499,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42Y5S9AQ3P;
+				DEVELOPMENT_TEAM = 8MG847C3TY;
 				INFOPLIST_FILE = Quran/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quran.mainqurann;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quran.mainqurann-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

@@ -4,26 +4,22 @@ PODS:
     - Alamofire (~> 4.8)
   - CodableAlamofire (1.1.2):
     - Alamofire (~> 4.0)
-  - Soundable (1.1.0)
 
 DEPENDENCIES:
   - AlamofireNetworkActivityIndicator
   - CodableAlamofire
-  - Soundable
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireNetworkActivityIndicator
     - CodableAlamofire
-    - Soundable
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
-  Soundable: 335cce529d674745cd01f054eeeefe20360ce0e1
 
-PODFILE CHECKSUM: 43a854cc1da663a0f9e23eedc0ce4061b419dc1f
+PODFILE CHECKSUM: 2ad0198e17e47ceb9b2630756261e7936bef8d94
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.8.4
