@@ -26,7 +26,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let surahViewController = segue.destination as? SurahViewController {
             if let rowNumber = tableView.indexPathForSelectedRow?.row {
-                surahViewController.surahNumber = Int(filteredSurahArray[rowNumber].index)!
+                surahViewController.surah = filteredSurahArray[rowNumber]
             } else {
                 surahViewController.isOpenedWithBookmark = true
             }

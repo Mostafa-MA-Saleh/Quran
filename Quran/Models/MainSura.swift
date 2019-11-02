@@ -6,13 +6,13 @@
 //
 
 import Foundation
-struct MainSura :Codable {
+struct MainSura: Codable {
     var titleAr = ""
     var count = 0
     var index = ""
     var type = ""
-    
+
     func getType() -> String {
-        return type == "Makkiyah" ? "سورة مكية":"سورة مدنية"
+        return type == "Makkiyah" ? "سورة مكية" : "سورة مدنية"
     }
 }

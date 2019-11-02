@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0625D727236DF228008F593E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D726236DF228008F593E /* SettingsViewController.swift */; };
 		063E5241234CF2C300671F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063E5240234CF2C300671F80 /* AppDelegate.swift */; };
 		063E5245234CF2C300671F80 /* SurahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063E5244234CF2C300671F80 /* SurahViewController.swift */; };
 		063E5248234CF2C300671F80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E5246234CF2C300671F80 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		021411AACF2E08B82EDB4E3E /* Pods-Quran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.release.xcconfig"; path = "Target Support Files/Pods-Quran/Pods-Quran.release.xcconfig"; sourceTree = "<group>"; };
 		0280B728F62AC9AB1A2FC160 /* Pods_Quran.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quran.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0625D726236DF228008F593E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		063E523D234CF2C300671F80 /* Quran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quran.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		063E5240234CF2C300671F80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		063E5244234CF2C300671F80 /* SurahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				063E5244234CF2C300671F80 /* SurahViewController.swift */,
 				849E910E234E2E3F00FD4D15 /* SearchViewController.swift */,
 				0685B71C235E741D0029C113 /* TafseerViewController.swift */,
+				0625D726236DF228008F593E /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				0685B71F235E75A20029C113 /* TafseerApiManager.swift in Sources */,
 				06CAA76F2369C2E20094CA7A /* QuranIndex.swift in Sources */,
 				849E9109234E174300FD4D15 /* ActivityIndicator.swift in Sources */,
+				0625D727236DF228008F593E /* SettingsViewController.swift in Sources */,
 				0660897D234D09950000E6BA /* Ayah.swift in Sources */,
 				849E910B234E182800FD4D15 /* PlayerStatus.swift in Sources */,
 				0685B723235E7E380029C113 /* Tafseer.swift in Sources */,

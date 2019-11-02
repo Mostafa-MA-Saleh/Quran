@@ -23,9 +23,6 @@ struct Surah: Codable {
             }.joined()
             let ayahNumberUnicode = "\u{FD3F}\(surahNumberString)\u{FD3E}"
             let string = "<a href=\"\(ayah.numberInSurah)\">\(ayah.text)</a>&nbsp; \(ayahNumberUnicode)&nbsp;"
-            if (37 ... 38).contains(ayah.numberInSurah) {
-                print(string)
-            }
             surahHtmlString += string
         }
         let header =  "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
