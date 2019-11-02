@@ -176,11 +176,9 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         })
         alert.addAction(UIAlertAction(title: "علامة", style: .default) { [weak self] _ in
             guard let self = self else { return }
-            self.changeFontSize(to: 23)
             let position = Float(self.textView.contentOffset.y)
             UserDefaults.standard.set(position, forKey: SurahViewController.KEY_BOOKMARK_POSITION)
             UserDefaults.standard.set(self.surah, forKey: SurahViewController.KEY_BOOKMARK_SURAH)
-            self.changeFontSize(to: self.fontSize)
         })
         alert.addAction(UIAlertAction(title: "الغاء", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -190,6 +188,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         if playerStatus == .playing || player.player?.isPlaying == true {
             player.stop()
         }
+        highlight(ayahNumber: ayahNumber - 1)
         ayaNumber = ayahNumber
         playerStatus = .playing
         loadingIndicator.startAnimating()
@@ -267,6 +266,8 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 
             alert.addAction(UIAlertAction(title: "الغاء", style: .destructive, handler: nil))
             self.present(alert, animated: true, completion: nil)
+
+            self.highlight(ayahNumber: -100)
         }
     }
 
@@ -316,6 +317,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             if fileManager.fileExists(atPath: filePath) {
                 print("FILE AVAILABLE")
                 player.play(url: pathComponent)
+                highlight(ayahNumber: ayaNumber - 1)
             } else {
                 print("FILE NOT AVAILABLE")
                 // you can use NSURLSession.sharedSession to download the data asynchronously
@@ -393,9 +395,14 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         view.addSubview(effectView)
     }
 
-    private func changeFontSize(to newSize: CGFloat) {
-        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText!)
-        attributedString.addAttribute(.font, value: UIFont(name: fontName, size: newSize)!, range: NSRange(location: 0, length: attributedString.length))
+    private func highlight(ayahNumber: Int) {
+        let attributedString = NSMutableAttributedString(attributedString: textView.attributedText)
+        attributedString.removeAttribute(.backgroundColor, range: NSRange(location: 0, length: attributedString.length))
+        let plainString = attributedString.string
+        if let ayahRange = plainString.range(of: "\(ayahNumber.arabicNumbers).+\((ayahNumber + 1).arabicNumbers)", options: .regularExpression) {
+            let range = ayahRange.lowerBound.add(2, in: plainString) ... ayahRange.upperBound.add(-3, in: plainString)
+            attributedString.addAttribute(.backgroundColor, value: UIColor.yellow.withAlphaComponent(0.3), range: NSRange(range, in: plainString))
+        }
         textView.attributedText = attributedString
     }
 }

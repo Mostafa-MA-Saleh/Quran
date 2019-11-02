@@ -14,6 +14,7 @@
 		063E524A234CF2C800671F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063E5249234CF2C800671F80 /* Assets.xcassets */; };
 		063E524D234CF2C800671F80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E524B234CF2C800671F80 /* LaunchScreen.storyboard */; };
 		063EA133236B8FAA00D37AA0 /* NonPreviewTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063EA132236B8FAA00D37AA0 /* NonPreviewTextView.swift */; };
+		063EA135236B97D100D37AA0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063EA134236B97D100D37AA0 /* Int.swift */; };
 		0660896F234CF54C0000E6BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660896E234CF54C0000E6BA /* String.swift */; };
 		06608977234D07EA0000E6BA /* QuranApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06608976234D07EA0000E6BA /* QuranApiManager.swift */; };
 		06608979234D08BC0000E6BA /* Surah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06608978234D08BC0000E6BA /* Surah.swift */; };
@@ -40,6 +41,7 @@
 		063E5249234CF2C800671F80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		063E524E234CF2C800671F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		063EA132236B8FAA00D37AA0 /* NonPreviewTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonPreviewTextView.swift; sourceTree = "<group>"; };
+		063EA134236B97D100D37AA0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		064783F3236A3B2B008BAC84 /* QUR_STD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = QUR_STD.TTF; sourceTree = "<group>"; };
 		0660896E234CF54C0000E6BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		06608976234D07EA0000E6BA /* QuranApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranApiManager.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				0660896E234CF54C0000E6BA /* String.swift */,
+				063EA134236B97D100D37AA0 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				06608977234D07EA0000E6BA /* QuranApiManager.swift in Sources */,
 				849E9112234E30B000FD4D15 /* SuraTableViewCell.swift in Sources */,
 				0660896F234CF54C0000E6BA /* String.swift in Sources */,
+				063EA135236B97D100D37AA0 /* Int.swift in Sources */,
 				063E5245234CF2C300671F80 /* SurahViewController.swift in Sources */,
 				849E910D234E2C8300FD4D15 /* MainSura.swift in Sources */,
 				0685B71D235E741D0029C113 /* TafseerViewController.swift in Sources */,

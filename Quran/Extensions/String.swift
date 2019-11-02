@@ -20,4 +20,18 @@ extension String {
     var htmlToString: String {
         return htmlToAttributedString?.string ?? ""
     }
+
+    var arabicNumbers: String {
+        map { char -> String in
+            let ayahNumberArabic = String(format: "%04X", Int("\(char)")! + 1632)
+            let charCode = UInt32(ayahNumberArabic, radix: 16)!
+            return "\(UnicodeScalar(charCode)!)"
+        }.joined()
+    }
+}
+
+extension String.Index {
+    func add(_ int: Int, in string: String) -> String.Index {
+        return string.index(self, offsetBy: int)
+    }
 }
