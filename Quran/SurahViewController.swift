@@ -11,6 +11,7 @@ import UIKit
 class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
     @IBOutlet var textView: UITextView!
     @IBOutlet var playerButton: UIButton!
+    @IBOutlet var scrollView: UIScrollView!
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
@@ -45,7 +46,11 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         activityIndicator = ActivityIndicator(view: view, navigationController: nil, tabBarController: nil)
         activityIndicator?.showActivityIndicator()
         if isOpenedWithBookmark {
-            surah = (UserDefaults.standard.object(forKey: SurahViewController.KEY_BOOKMARK_SURAH) as! MainSura)
+            if let data = UserDefaults.standard.data(forKey: SurahViewController.KEY_BOOKMARK_SURAH), let saved = NSKeyedUnarchiver.unarchiveObject(with: data) as? MainSura {
+                self.surah = saved
+            } else {
+                navigationController?.popViewController(animated: true)
+            }
         }
         QuranApiManager.shared.fetch(surahNumber: surahNumber) { [weak self] result in
             guard let self = self else { return }
@@ -144,7 +149,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         textView.textAlignment = .justified
         if isOpenedWithBookmark {
             let savedPosition = UserDefaults.standard.float(forKey: SurahViewController.KEY_BOOKMARK_POSITION)
-            textView.contentOffset = CGPoint(x: 0, y: Int(savedPosition))
+            scrollView.contentOffset = CGPoint(x: 0, y: Int(savedPosition))
         }
     }
 
@@ -176,9 +181,10 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         })
         alert.addAction(UIAlertAction(title: "علامة", style: .default) { [weak self] _ in
             guard let self = self else { return }
-            let position = Float(self.textView.contentOffset.y)
+            let position = Float(self.scrollView.contentOffset.y)
             UserDefaults.standard.set(position, forKey: SurahViewController.KEY_BOOKMARK_POSITION)
-            UserDefaults.standard.set(self.surah, forKey: SurahViewController.KEY_BOOKMARK_SURAH)
+            let data = NSKeyedArchiver.archivedData(withRootObject: self.surah)
+            UserDefaults.standard.set(data, forKey: SurahViewController.KEY_BOOKMARK_SURAH)
         })
         alert.addAction(UIAlertAction(title: "الغاء", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)

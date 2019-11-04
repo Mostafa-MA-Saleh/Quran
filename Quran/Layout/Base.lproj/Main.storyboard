@@ -310,6 +310,7 @@
                     <connections>
                         <outlet property="loadingIndicator" destination="GOc-Ds-ymw" id="Utl-mk-GhB"/>
                         <outlet property="playerButton" destination="jel-zc-3jE" id="pTb-PY-yqx"/>
+                        <outlet property="scrollView" destination="Gmv-8j-8UT" id="Vf1-rC-vN0"/>
                         <outlet property="textView" destination="YlO-lS-xTu" id="NIM-oN-o5Z"/>
                         <outlet property="titleLabel" destination="dKw-Qh-Z4q" id="iaK-59-4J9"/>
                         <segue destination="JnI-Uh-XdE" kind="show" identifier="TafseerSegue" id="SeU-gQ-n1Q"/>
