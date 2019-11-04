@@ -256,7 +256,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                 }.resume()
             }
         } else {
-            printLN("FILE PATH NOT AVAILABLE")
+            print("FILE PATH NOT AVAILABLE")
         }
     }
 
@@ -284,7 +284,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                     let newAyah = ayah + 1
                     repeatDownload(sura: sura, ayah: newAyah)
                 } else {
-                    printLN("FILE NOT AVAILABLE")
+                    print("FILE NOT AVAILABLE")
                     // you can use NSURLSession.sharedSession to download the data asynchronously
 
                     URLSession.shared.downloadTask(with: audioUrl) { [weak self] location, _, error in
@@ -302,7 +302,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                 }
 
             } else {
-                printLN("FILE PATH NOT AVAILABLE")
+                print("FILE PATH NOT AVAILABLE")
             }
         }
     }
@@ -330,7 +330,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
                             try FileManager.default.moveItem(at: location, to: pathComponent)
                             print("File moved to documents folder")
                         } catch {
-                            self.printLN(error.localizedDescription)
+                            print(error.localizedDescription)
                         }
                     }.resume()
                 }
