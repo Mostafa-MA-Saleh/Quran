@@ -13,12 +13,12 @@
 		063E5248234CF2C300671F80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E5246234CF2C300671F80 /* Main.storyboard */; };
 		063E524A234CF2C800671F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063E5249234CF2C800671F80 /* Assets.xcassets */; };
 		063E524D234CF2C800671F80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063E524B234CF2C800671F80 /* LaunchScreen.storyboard */; };
-		063EA133236B8FAA00D37AA0 /* NonPreviewTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063EA132236B8FAA00D37AA0 /* NonPreviewTextView.swift */; };
 		063EA135236B97D100D37AA0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063EA134236B97D100D37AA0 /* Int.swift */; };
 		0660896F234CF54C0000E6BA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660896E234CF54C0000E6BA /* String.swift */; };
 		06608977234D07EA0000E6BA /* QuranApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06608976234D07EA0000E6BA /* QuranApiManager.swift */; };
 		06608979234D08BC0000E6BA /* Surah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06608978234D08BC0000E6BA /* Surah.swift */; };
 		0660897D234D09950000E6BA /* Ayah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660897C234D09950000E6BA /* Ayah.swift */; };
+		066B593623709FBE008850DE /* CustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 066B593423709FBE008850DE /* CustomTextView.m */; };
 		0685B71D235E741D0029C113 /* TafseerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685B71C235E741D0029C113 /* TafseerViewController.swift */; };
 		0685B71F235E75A20029C113 /* TafseerApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685B71E235E75A20029C113 /* TafseerApiManager.swift */; };
 		0685B723235E7E380029C113 /* Tafseer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685B722235E7E380029C113 /* Tafseer.swift */; };
@@ -40,13 +40,15 @@
 		063E5244234CF2C300671F80 /* SurahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahViewController.swift; sourceTree = "<group>"; };
 		063E5249234CF2C800671F80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		063E524E234CF2C800671F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		063EA132236B8FAA00D37AA0 /* NonPreviewTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonPreviewTextView.swift; sourceTree = "<group>"; };
 		063EA134236B97D100D37AA0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		064783F3236A3B2B008BAC84 /* QUR_STD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = QUR_STD.TTF; sourceTree = "<group>"; };
 		0660896E234CF54C0000E6BA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		06608976234D07EA0000E6BA /* QuranApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranApiManager.swift; sourceTree = "<group>"; };
 		06608978234D08BC0000E6BA /* Surah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surah.swift; sourceTree = "<group>"; };
 		0660897C234D09950000E6BA /* Ayah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ayah.swift; sourceTree = "<group>"; };
+		066B593023709FA1008850DE /* Quran-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quran-Bridging-Header.h"; sourceTree = "<group>"; };
+		066B593423709FBE008850DE /* CustomTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextView.m; sourceTree = "<group>"; };
+		066B593523709FBE008850DE /* CustomTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextView.h; sourceTree = "<group>"; };
 		0685B71C235E741D0029C113 /* TafseerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TafseerViewController.swift; sourceTree = "<group>"; };
 		0685B71E235E75A20029C113 /* TafseerApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TafseerApiManager.swift; sourceTree = "<group>"; };
 		0685B720235E78670029C113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,7 +155,9 @@
 				063E5240234CF2C300671F80 /* AppDelegate.swift */,
 				849E9108234E174300FD4D15 /* ActivityIndicator.swift */,
 				06CAA76E2369C2E20094CA7A /* QuranIndex.swift */,
-				063EA132236B8FAA00D37AA0 /* NonPreviewTextView.swift */,
+				066B593523709FBE008850DE /* CustomTextView.h */,
+				066B593423709FBE008850DE /* CustomTextView.m */,
+				066B593023709FA1008850DE /* Quran-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -239,7 +243,7 @@
 				TargetAttributes = {
 					063E523C234CF2C300671F80 = {
 						CreatedOnToolsVersion = 11.0;
-						LastSwiftMigration = 1110;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -321,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				063EA133236B8FAA00D37AA0 /* NonPreviewTextView.swift in Sources */,
 				849E910F234E2E3F00FD4D15 /* SearchViewController.swift in Sources */,
 				06608979234D08BC0000E6BA /* Surah.swift in Sources */,
 				06608977234D07EA0000E6BA /* QuranApiManager.swift in Sources */,
@@ -330,6 +333,7 @@
 				063EA135236B97D100D37AA0 /* Int.swift in Sources */,
 				063E5245234CF2C300671F80 /* SurahViewController.swift in Sources */,
 				849E910D234E2C8300FD4D15 /* MainSura.swift in Sources */,
+				066B593623709FBE008850DE /* CustomTextView.m in Sources */,
 				0685B71D235E741D0029C113 /* TafseerViewController.swift in Sources */,
 				0685B71F235E75A20029C113 /* TafseerApiManager.swift in Sources */,
 				06CAA76F2369C2E20094CA7A /* QuranIndex.swift in Sources */,
@@ -483,6 +487,7 @@
 			baseConfigurationReference = 686929116F17D812FBF8A2EE /* Pods-Quran.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MG847C3TY;
@@ -495,6 +500,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.quran.mainqurann-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quran/Supporting Files/Quran-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -505,6 +512,7 @@
 			baseConfigurationReference = 021411AACF2E08B82EDB4E3E /* Pods-Quran.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MG847C3TY;
@@ -517,6 +525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.quran.mainqurann-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quran/Supporting Files/Quran-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
