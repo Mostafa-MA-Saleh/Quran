@@ -24,4 +24,13 @@ class QuranApiManager {
             }
         }
     }
+    
+    func getPageInfo(surahNumber: Int,ayaNumber:Int, completion: @escaping (Result<Page>) -> Void) {
+           Alamofire.request("http://api.alquran.cloud/v1/ayah/\(surahNumber):\(ayaNumber)/quran-uthmani").responseDecodableObject(keyPath: "data") { (response: DataResponse<Page>) in
+               switch response.result {
+               case let .success(surah): completion(.success(surah))
+               case let .failure(error): completion(.failure(error))
+               }
+           }
+       }
 }

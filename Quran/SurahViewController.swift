@@ -12,6 +12,7 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
     @IBOutlet var textView: UITextView!
     @IBOutlet var playerButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var pageNumberLabel: UILabel!
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
@@ -21,13 +22,14 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
 
     var surah: MainSura!
     var ayaNumber = 1
+    
     var maxAya = 1
     var player = MyPlayer2()
     var activityIndicator: ActivityIndicator?
     var isOpenedWithBookmark = false
     var surahNumber: Int { Int(surah.index) ?? 1 }
     var AyahInSura: Int { surah.count }
-
+    var pageNumber :Int { Int(surah.pages ?? "1") ?? 1 }
     var playerStatus = PlayerStatus.stop
 
     private var fontSize: CGFloat {
@@ -67,6 +69,11 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
         player.p = self
         player.vc = self
         title = surah.titleAr
+        pageNumberLabel.text = pageNumber.arabicNumbers
+        pageNumberLabel.font = titleLabel.font
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "الجزء الاول", style: .plain, target: self, action: nil)
+
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -410,8 +417,25 @@ class SurahViewController: UIViewController, UITextViewDelegate, PMyPlayer {
             attributedString.addAttribute(.backgroundColor, value: UIColor.yellow.withAlphaComponent(0.3), range: NSRange(range, in: plainString))
         }
         textView.attributedText = attributedString
+        getPageNumber()
+    }
+    
+    func getPageNumber(){
+        QuranApiManager.shared.getPageInfo(surahNumber: surahNumber,ayaNumber: ayaNumber) { [weak self] result in
+                  guard let self = self else { return }
+                  switch result {
+                  case let .success(page):
+                    self.pageNumberLabel.text = page.page.arabicNumbers
+                    
+                      break
+                  case let .failure(error):
+                      print(error)
+                      break
+                  }
+              }
     }
 }
+
 
 class MyPlayer2: NSObject, AVAudioPlayerDelegate {
     var player: AVAudioPlayer?

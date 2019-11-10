@@ -21,6 +21,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         surahArray.append(contentsOf: try! JSONDecoder().decode([MainSura].self, from: jsonData))
         filteredSurahArray.append(contentsOf: surahArray)
         navigationController?.title = "فهرس القران الكريم"
+      
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zcV-df-agf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zcV-df-agf">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -289,11 +289,18 @@
                                     <constraint firstItem="YlO-lS-xTu" firstAttribute="leading" secondItem="Gmv-8j-8UT" secondAttribute="leading" id="p1x-tf-KBf"/>
                                 </constraints>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01I-5J-Mwu">
+                                <rect key="frame" x="182.5" y="597" width="10" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UW7-TV-8zv" secondAttribute="trailing" id="0OW-VN-ZK4"/>
                             <constraint firstItem="Gmv-8j-8UT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1FF-7Q-mnw"/>
+                            <constraint firstItem="01I-5J-Mwu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2PC-EX-GeS"/>
                             <constraint firstItem="dal-fV-kBM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6qX-EI-HQ2"/>
                             <constraint firstItem="Gmv-8j-8UT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="7X7-hC-Qfy"/>
                             <constraint firstItem="Gmv-8j-8UT" firstAttribute="width" secondItem="dal-fV-kBM" secondAttribute="width" constant="-60" id="7vd-wY-uh4"/>
@@ -303,12 +310,14 @@
                             <constraint firstItem="dal-fV-kBM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MNh-yM-ZR0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UW7-TV-8zv" secondAttribute="bottom" id="Qtg-B4-JJd"/>
                             <constraint firstItem="UW7-TV-8zv" firstAttribute="top" secondItem="dal-fV-kBM" secondAttribute="bottom" id="s4s-uk-c55"/>
+                            <constraint firstItem="UW7-TV-8zv" firstAttribute="top" secondItem="01I-5J-Mwu" secondAttribute="bottom" id="zXI-Ts-esp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="bCV-GX-iAF"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="GOc-Ds-ymw" id="Utl-mk-GhB"/>
+                        <outlet property="pageNumberLabel" destination="01I-5J-Mwu" id="di7-sy-Wuz"/>
                         <outlet property="playerButton" destination="jel-zc-3jE" id="pTb-PY-yqx"/>
                         <outlet property="scrollView" destination="Gmv-8j-8UT" id="Vf1-rC-vN0"/>
                         <outlet property="textView" destination="YlO-lS-xTu" id="NIM-oN-o5Z"/>
