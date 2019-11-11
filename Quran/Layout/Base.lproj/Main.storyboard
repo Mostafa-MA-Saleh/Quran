@@ -229,6 +229,9 @@
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القارى الشيخ : حسين الياخندى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-Ys-zhc">
                                         <rect key="frame" x="8" y="13.5" width="217" height="23.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="217" id="C6q-4G-cfP"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="me_quran" family="me_quran" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -244,12 +247,20 @@
                                             <action selector="playButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVs-ua-kYv"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxF-xq-xgB">
+                                        <rect key="frame" x="229" y="13.5" width="104" height="23.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="GOc-Ds-ymw" firstAttribute="trailing" secondItem="jel-zc-3jE" secondAttribute="trailing" id="06b-hC-HCQ"/>
                                     <constraint firstAttribute="trailing" secondItem="jel-zc-3jE" secondAttribute="trailing" constant="8" id="12K-A1-yD5"/>
                                     <constraint firstItem="GOc-Ds-ymw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kfc-Ys-zhc" secondAttribute="trailing" constant="10" id="EDB-hZ-oig"/>
                                     <constraint firstItem="GOc-Ds-ymw" firstAttribute="width" secondItem="jel-zc-3jE" secondAttribute="width" id="ERI-TJ-1Dq"/>
+                                    <constraint firstItem="ZxF-xq-xgB" firstAttribute="leading" secondItem="kfc-Ys-zhc" secondAttribute="trailing" constant="4" id="F8R-SZ-ooA"/>
+                                    <constraint firstItem="ZxF-xq-xgB" firstAttribute="top" secondItem="kfc-Ys-zhc" secondAttribute="top" id="GCp-gh-5Xq"/>
                                     <constraint firstItem="jel-zc-3jE" firstAttribute="centerY" secondItem="UW7-TV-8zv" secondAttribute="centerY" id="H6y-Oh-BWu"/>
                                     <constraint firstItem="kfc-Ys-zhc" firstAttribute="leading" secondItem="UW7-TV-8zv" secondAttribute="leading" constant="8" id="IGv-Ds-0Mz"/>
                                     <constraint firstAttribute="height" constant="50" id="NJe-6v-3Ba"/>
@@ -257,7 +268,9 @@
                                     <constraint firstItem="GOc-Ds-ymw" firstAttribute="bottom" secondItem="jel-zc-3jE" secondAttribute="bottom" id="U5x-IZ-qFx"/>
                                     <constraint firstItem="GOc-Ds-ymw" firstAttribute="top" secondItem="jel-zc-3jE" secondAttribute="top" id="c36-Vk-UcX"/>
                                     <constraint firstItem="GOc-Ds-ymw" firstAttribute="leading" secondItem="jel-zc-3jE" secondAttribute="leading" id="dCf-Ij-kuY"/>
+                                    <constraint firstItem="jel-zc-3jE" firstAttribute="leading" secondItem="ZxF-xq-xgB" secondAttribute="trailing" constant="4" id="lsR-w7-MLr"/>
                                     <constraint firstItem="kfc-Ys-zhc" firstAttribute="centerY" secondItem="UW7-TV-8zv" secondAttribute="centerY" id="t1b-I4-jEF"/>
+                                    <constraint firstItem="ZxF-xq-xgB" firstAttribute="bottom" secondItem="kfc-Ys-zhc" secondAttribute="bottom" id="vXh-pb-sBm"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmv-8j-8UT">
@@ -316,6 +329,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bCV-GX-iAF"/>
                     <connections>
+                        <outlet property="juzLabel" destination="ZxF-xq-xgB" id="lcv-xw-inw"/>
                         <outlet property="loadingIndicator" destination="GOc-Ds-ymw" id="Utl-mk-GhB"/>
                         <outlet property="pageNumberLabel" destination="01I-5J-Mwu" id="di7-sy-Wuz"/>
                         <outlet property="playerButton" destination="jel-zc-3jE" id="pTb-PY-yqx"/>
