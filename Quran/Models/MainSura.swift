@@ -11,14 +11,16 @@ class MainSura: NSObject, Codable, NSCoding {
     var count = 0
     var index = ""
     var type = ""
-    var pages = ""
+    var startPage = 0
+    var endPage = 0
 
     required init?(coder: NSCoder) {
         titleAr = coder.decodeObject(forKey: "titleAr") as! String
         count = coder.decodeInteger(forKey: "count")
         index = coder.decodeObject(forKey: "index") as! String
         type = coder.decodeObject(forKey: "type") as! String
-        pages = coder.decodeObject(forKey: "pages") as! String
+        startPage = coder.decodeInteger(forKey: "startPage")
+        endPage = coder.decodeInteger(forKey: "endPage")
     }
 
     func encode(with coder: NSCoder) {
@@ -26,7 +28,8 @@ class MainSura: NSObject, Codable, NSCoding {
         coder.encode(count, forKey: "count")
         coder.encode(index, forKey: "index")
         coder.encode(type, forKey: "type")
-        coder.encode(pages, forKey: "pages")
+        coder.encode(startPage, forKey: "startPage")
+        coder.encode(endPage, forKey: "endPage")
     }
 
     func getType() -> String {

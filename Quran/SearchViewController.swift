@@ -69,7 +69,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     @IBAction func didClickBookmark() {
-        if UserDefaults.standard.object(forKey: SurahViewController.KEY_BOOKMARK_SURAH) != nil {
+        if UserDefaults.standard.object(forKey: AppDelegate.KEY_BOOKMARK_SURAH) != nil {
             performSegue(withIdentifier: "BookmarkSegue", sender: self)
         }
     }

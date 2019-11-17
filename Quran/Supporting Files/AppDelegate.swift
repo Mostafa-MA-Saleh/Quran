@@ -12,6 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
+    static let KEY_BOOKMARK_POSITION = "KeyBookmarkPosition"
+    static let KEY_BOOKMARK_SURAH = "KeyBookmarkSurah"
+    static let KEY_BOOKMARK_AYAH = "KeyBookmarkAyah"
+    static let KEY_BOOKMARK_PAGE = "KeyBookmarkPage"
     static let KEY_FONT_SIZE = "FontSizeKey"
     static let DEFAULT_FONT_SIZE: Float = 26
 
