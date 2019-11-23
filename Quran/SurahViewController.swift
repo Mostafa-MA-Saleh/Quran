@@ -24,7 +24,7 @@ class SurahViewController: UIPageViewController, UIPageViewControllerDelegate, U
         }
     }
 
-    private lazy var currentPageNumber = surah.startPage
+    lazy var currentPageNumber = surah.startPage
     private var surahNumber: Int!
 
     // MARK: Lifecycle
@@ -46,8 +46,18 @@ class SurahViewController: UIPageViewController, UIPageViewControllerDelegate, U
         previousViewController = viewController(for: currentPageNumber + 1)
         nextViewController = viewController(for: currentPageNumber - 1)
         title = surah.titleAr
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(enableSwipe), name:NSNotification.Name(rawValue: "enableSwipe"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(disableSwipe), name:NSNotification.Name(rawValue: "disableSwipe"), object: nil)
     }
 
+    @objc func disableSwipe(){
+        self.dataSource = nil
+    }
+
+    @objc func enableSwipe(){
+        self.dataSource = self
+    }
     // MARK: Private functions
 
     private func viewController(for pageNumber: Int) -> SinglePageViewController? {

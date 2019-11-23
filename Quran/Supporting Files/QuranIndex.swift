@@ -1,12 +1,3 @@
-//
-//  QuranIndex.swift
-//  Quran
-//
-//  Created by Mostafa Saleh on 10/30/19.
-//
-
-import Foundation
-
 let quarnIndexJsonString = """
 [
     {
@@ -94,8 +85,8 @@ let quarnIndexJsonString = """
         "title": "An-Nisaa'",
         "titleAr":"النساء",
         "index": "004",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 77,
+        "endPage": 106,
         "juz": [
             {
                 "index": "04",
@@ -127,8 +118,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ma'ida",
         "titleAr":"المائدة",
         "index": "005",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 106,
+        "endPage": 127,
         "juz": [
             {
                 "index": "06",
@@ -153,8 +144,8 @@ let quarnIndexJsonString = """
         "title": "Al-An'am",
         "titleAr":"الأنعام",
         "index": "006",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 128,
+        "endPage": 150,
         "juz": [
             {
                 "index": "07",
@@ -179,8 +170,8 @@ let quarnIndexJsonString = """
         "title": "Al-A'raf",
         "titleAr":"الأعراف",
         "index": "007",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 151,
+        "endPage": 176,
         "juz": [
             {
                 "index": "08",
@@ -205,8 +196,8 @@ let quarnIndexJsonString = """
         "title": "Al-Anfal",
         "titleAr":"الأنفال",
         "index": "008",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 177,
+        "endPage": 186,
         "juz": [
             {
                 "index": "09",
@@ -231,8 +222,8 @@ let quarnIndexJsonString = """
         "title": "Al-Tawba",
         "titleAr":"التوبة",
         "index": "009",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 187,
+        "endPage": 207,
         "juz": [
             {
                 "index": "10",
@@ -257,8 +248,8 @@ let quarnIndexJsonString = """
         "title": "Yunus",
         "titleAr":"يونس",
         "index": "010",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 208,
+        "endPage": 221,
         "juz": [
             {
                 "index": "11",
@@ -276,8 +267,8 @@ let quarnIndexJsonString = """
         "title": "Hud",
         "titleAr":"هود",
         "index": "011",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 221,
+        "endPage": 235,
         "juz": [
             {
                 "index": "11",
@@ -302,8 +293,8 @@ let quarnIndexJsonString = """
         "title": "Yusuf",
         "titleAr":"يوسف",
         "index": "012",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 235,
+        "endPage": 248,
         "juz": [
             {
                 "index": "12",
@@ -328,8 +319,8 @@ let quarnIndexJsonString = """
         "title": "Ar-Ra'd",
         "titleAr":"الرعد",
         "index": "013",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 249,
+        "endPage": 255,
         "juz": [
             {
                 "index": "13",
@@ -347,8 +338,8 @@ let quarnIndexJsonString = """
         "title": "Ibrahim",
         "titleAr":"إبراهيم",
         "index": "014",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 255,
+        "endPage": 261,
         "juz": [
             {
                 "index": "13",
@@ -366,8 +357,8 @@ let quarnIndexJsonString = """
         "title": "Al-Hijr",
         "titleAr":"الحجر",
         "index": "015",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 262,
+        "endPage": 267,
         "juz": [
             {
                 "index": "14",
@@ -385,8 +376,8 @@ let quarnIndexJsonString = """
         "title": "An-Nahl",
         "titleAr":"النحل",
         "index": "016",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 267,
+        "endPage": 281,
         "juz": [
             {
                 "index": "14",
@@ -404,8 +395,8 @@ let quarnIndexJsonString = """
         "title": "Al-Israa",
         "titleAr":"الإسراء",
         "index": "017",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 282,
+        "endPage": 293,
         "juz": [
             {
                 "index": "15",
@@ -423,8 +414,8 @@ let quarnIndexJsonString = """
         "title": "Al-Kahf",
         "titleAr":"الكهف",
         "index": "018",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 293,
+        "endPage": 304,
         "juz": [
             {
                 "index": "15",
@@ -449,8 +440,8 @@ let quarnIndexJsonString = """
         "title": "Maryam",
         "titleAr":"مريم",
         "index": "019",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 305,
+        "endPage": 312,
         "juz": [
             {
                 "index": "16",
@@ -468,8 +459,8 @@ let quarnIndexJsonString = """
         "title": "Ta-Ha",
         "titleAr":"طه",
         "index": "020",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 312,
+        "endPage": 321,
         "juz": [
             {
                 "index": "16",
@@ -487,8 +478,8 @@ let quarnIndexJsonString = """
         "title": "Al-Anbiya",
         "titleAr":"الأنبياء",
         "index": "021",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 322,
+        "endPage": 331,
         "juz": [
             {
                 "index": "17",
@@ -506,8 +497,8 @@ let quarnIndexJsonString = """
         "title": "Al-Hajj",
         "titleAr":"الحج",
         "index": "022",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 332,
+        "endPage": 341,
         "juz": [
             {
                 "index": "17",
@@ -525,8 +516,8 @@ let quarnIndexJsonString = """
         "title": "Al-Muminun",
         "titleAr":"المؤمنون",
         "index": "023",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 342,
+        "endPage": 349,
         "juz": [
             {
                 "index": "18",
@@ -544,8 +535,8 @@ let quarnIndexJsonString = """
         "title": "An-Nur",
         "titleAr":"النور",
         "index": "024",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 350,
+        "endPage": 359,
         "juz": [
             {
                 "index": "18",
@@ -563,8 +554,8 @@ let quarnIndexJsonString = """
         "title": "Al-Furqan",
         "titleAr":"الفرقان",
         "index": "025",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 359,
+        "endPage": 366,
         "juz": [
             {
                 "index": "18",
@@ -589,8 +580,8 @@ let quarnIndexJsonString = """
         "title": "Ash-Shuara",
         "titleAr":"الشعراء",
         "index": "026",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 367,
+        "endPage": 376,
         "juz": [
             {
                 "index": "19",
@@ -608,8 +599,8 @@ let quarnIndexJsonString = """
         "title": "An-Naml",
         "titleAr":"النمل",
         "index": "027",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 377,
+        "endPage": 385,
         "juz": [
             {
                 "index": "19",
@@ -634,8 +625,8 @@ let quarnIndexJsonString = """
         "title": "Al-Qasas",
         "titleAr":"القصص",
         "index": "028",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 385,
+        "endPage": 396,
         "juz": [
             {
                 "index": "20",
@@ -653,8 +644,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ankabut",
         "titleAr":"العنكبوت",
         "index": "029",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 396,
+        "endPage": 404,
         "juz": [
             {
                 "index": "20",
@@ -679,8 +670,8 @@ let quarnIndexJsonString = """
         "title": "Ar-Rum",
         "titleAr":"الروم",
         "index": "030",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 404,
+        "endPage": 410,
         "juz": [
             {
                 "index": "21",
@@ -698,8 +689,8 @@ let quarnIndexJsonString = """
         "title": "Luqman",
         "titleAr":"لقمان",
         "index": "031",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 411,
+        "endPage": 414,
         "juz": [
             {
                 "index": "21",
@@ -717,8 +708,8 @@ let quarnIndexJsonString = """
         "title": "As-Sajdah",
         "titleAr":"السجدة",
         "index": "032",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 415,
+        "endPage": 417,
         "juz": [
             {
                 "index": "21",
@@ -736,8 +727,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ahzab",
         "titleAr":"الأحزاب",
         "index": "033",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 418,
+        "endPage": 427,
         "juz": [
             {
                 "index": "21",
@@ -762,8 +753,8 @@ let quarnIndexJsonString = """
         "title": "Saba",
         "titleAr":"سبأ",
         "index": "034",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 428,
+        "endPage": 434,
         "juz": [
             {
                 "index": "22",
@@ -781,8 +772,8 @@ let quarnIndexJsonString = """
         "title": "Fatir",
         "titleAr":"فاطر",
         "index": "035",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 434,
+        "endPage": 440,
         "juz": [
             {
                 "index": "22",
@@ -800,8 +791,8 @@ let quarnIndexJsonString = """
         "title": "Yasin",
         "titleAr":"يس",
         "index": "036",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 440,
+        "endPage": 445,
         "juz": [
             {
                 "index": "22",
@@ -826,8 +817,8 @@ let quarnIndexJsonString = """
         "title": "As-Saffat",
         "titleAr":"الصافات",
         "index": "037",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 446,
+        "endPage": 452,
         "juz": [
             {
                 "index": "23",
@@ -845,8 +836,8 @@ let quarnIndexJsonString = """
         "title": "Sad",
         "titleAr":"ص",
         "index": "038",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 453,
+        "endPage": 458,
         "juz": [
             {
                 "index": "23",
@@ -864,8 +855,8 @@ let quarnIndexJsonString = """
         "title": "Az-Zumar",
         "titleAr":"الزمر",
         "index": "039",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 458,
+        "endPage": 467,
         "juz": [
             {
                 "index": "23",
@@ -890,8 +881,8 @@ let quarnIndexJsonString = """
         "title": "Ghafir",
         "titleAr":"غافر",
         "index": "040",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 467,
+        "endPage": 476,
         "juz": [
             {
                 "index": "24",
@@ -909,8 +900,8 @@ let quarnIndexJsonString = """
         "title": "Fussilat",
         "titleAr":"فصلت",
         "index": "041",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 477,
+        "endPage": 482,
         "juz": [
             {
                 "index": "24",
@@ -935,8 +926,8 @@ let quarnIndexJsonString = """
         "title": "Ash-Shura",
         "titleAr":"الشورى",
         "index": "042",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 483,
+        "endPage": 489,
         "juz": [
             {
                 "index": "25",
@@ -954,8 +945,8 @@ let quarnIndexJsonString = """
         "title": "Az-Zukhruf",
         "titleAr":"الزخرف",
         "index": "043",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 489,
+        "endPage": 495,
         "juz": [
             {
                 "index": "25",
@@ -973,8 +964,8 @@ let quarnIndexJsonString = """
         "title": "Ad-Dukhan",
         "titleAr":"الدخان",
         "index": "044",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 496,
+        "endPage": 498,
         "juz": [
             {
                 "index": "25",
@@ -992,8 +983,8 @@ let quarnIndexJsonString = """
         "title": "Al-Jathiya",
         "titleAr":"الجاثية",
         "index": "045",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 499,
+        "endPage": 502,
         "juz": [
             {
                 "index": "25",
@@ -1011,8 +1002,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ahqaf",
         "titleAr":"الأحقاف",
         "index": "046",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 502,
+        "endPage": 506,
         "juz": [
             {
                 "index": "26",
@@ -1030,8 +1021,8 @@ let quarnIndexJsonString = """
         "title": "Muhammad",
         "titleAr":"محمد",
         "index": "047",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 507,
+        "endPage": 510,
         "juz": [
             {
                 "index": "26",
@@ -1049,8 +1040,8 @@ let quarnIndexJsonString = """
         "title": "Al-Fath",
         "titleAr":"الفتح",
         "index": "048",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 511,
+        "endPage": 515,
         "juz": [
             {
                 "index": "26",
@@ -1068,8 +1059,8 @@ let quarnIndexJsonString = """
         "title": "Al-Hujurat",
         "titleAr":"الحجرات",
         "index": "049",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 515,
+        "endPage": 517,
         "juz": [
             {
                 "index": "26",
@@ -1087,8 +1078,8 @@ let quarnIndexJsonString = """
         "title": "Qaf",
         "titleAr":"ق",
         "index": "050",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 518,
+        "endPage": 520,
         "juz": [
             {
                 "index": "26",
@@ -1106,8 +1097,8 @@ let quarnIndexJsonString = """
         "title": "Az-Zariyat",
         "titleAr":"الذاريات",
         "index": "051",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 520,
+        "endPage": 523,
         "juz": [
             {
                 "index": "26",
@@ -1132,8 +1123,8 @@ let quarnIndexJsonString = """
         "title": "At-Tur",
         "titleAr":"الطور",
         "index": "052",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 523,
+        "endPage": 525,
         "juz": [
             {
                 "index": "27",
@@ -1151,8 +1142,8 @@ let quarnIndexJsonString = """
         "title": "An-Najm",
         "titleAr":"النجم",
         "index": "053",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 525,
+        "endPage": 528,
         "juz": [
             {
                 "index": "27",
@@ -1170,8 +1161,8 @@ let quarnIndexJsonString = """
         "title": "Al-Qamar",
         "titleAr":"القمر",
         "index": "054",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 528,
+        "endPage": 531,
         "juz": [
             {
                 "index": "27",
@@ -1189,8 +1180,8 @@ let quarnIndexJsonString = """
         "title": "Ar-Rahman",
         "titleAr":"الرحمن",
         "index": "055",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 531,
+        "endPage": 534,
         "juz": [
             {
                 "index": "27",
@@ -1208,8 +1199,8 @@ let quarnIndexJsonString = """
         "title": "Al-Waqia",
         "titleAr":"الواقعة",
         "index": "056",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 534,
+        "endPage": 537,
         "juz": [
             {
                 "index": "27",
@@ -1227,8 +1218,8 @@ let quarnIndexJsonString = """
         "title": "Al-Hadid",
         "titleAr":"الحديد",
         "index": "057",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 537,
+        "endPage": 541,
         "juz": [
             {
                 "index": "27",
@@ -1246,8 +1237,8 @@ let quarnIndexJsonString = """
         "title": "Al-Mujadilah",
         "titleAr":"المجادلة",
         "index": "058",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 542,
+        "endPage": 545,
         "juz": [
             {
                 "index": "28",
@@ -1265,8 +1256,8 @@ let quarnIndexJsonString = """
         "title": "Al-Hashr",
         "titleAr":"الحشر",
         "index": "059",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 545,
+        "endPage": 548,
         "juz": [
             {
                 "index": "28",
@@ -1284,8 +1275,8 @@ let quarnIndexJsonString = """
         "title": "Al-Mumtahinah",
         "titleAr":"الممتحنة",
         "index": "060",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 549,
+        "endPage": 551,
         "juz": [
             {
                 "index": "28",
@@ -1303,8 +1294,8 @@ let quarnIndexJsonString = """
         "title": "As-Saff",
         "titleAr":"الصف",
         "index": "061",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 551,
+        "endPage": 552,
         "juz": [
             {
                 "index": "28",
@@ -1322,8 +1313,8 @@ let quarnIndexJsonString = """
         "title": "Al-Jumu'ah",
         "titleAr":"الجمعة",
         "index": "062",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 553,
+        "endPage": 554,
         "juz": [
             {
                 "index": "28",
@@ -1341,7 +1332,7 @@ let quarnIndexJsonString = """
         "title": "Al-Munafiqun",
         "titleAr":"المنافقون",
         "index": "063",
-        "startPage": 0,
+        "startPage": 554,
         "endPage": 0,
         "juz": [
             {
@@ -1360,8 +1351,8 @@ let quarnIndexJsonString = """
         "title": "At-Taghabun",
         "titleAr":"التغابن",
         "index": "064",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 555,
+        "endPage": 557,
         "juz": [
             {
                 "index": "28",
@@ -1379,8 +1370,8 @@ let quarnIndexJsonString = """
         "title": "At-Talaq",
         "titleAr":"الطلاق",
         "index": "065",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 558,
+        "endPage": 559,
         "juz": [
             {
                 "index": "28",
@@ -1398,8 +1389,8 @@ let quarnIndexJsonString = """
         "title": "At-Tahrim",
         "titleAr":"التحريم",
         "index": "066",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 560,
+        "endPage": 561,
         "juz": [
             {
                 "index": "28",
@@ -1417,8 +1408,8 @@ let quarnIndexJsonString = """
         "title": "Al-Mulk",
         "titleAr":"الملك",
         "index": "067",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 562,
+        "endPage": 564,
         "juz": [
             {
                 "index": "29",
@@ -1436,8 +1427,8 @@ let quarnIndexJsonString = """
         "title": "Al-Qalam",
         "titleAr":"القلم",
         "index": "068",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 564,
+        "endPage": 566,
         "juz": [
             {
                 "index": "29",
@@ -1455,8 +1446,8 @@ let quarnIndexJsonString = """
         "title": "Al-Haqqah",
         "titleAr":"الحاقة",
         "index": "069",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 566,
+        "endPage": 568,
         "juz": [
             {
                 "index": "29",
@@ -1474,8 +1465,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ma'arij",
         "titleAr":"المعارج",
         "index": "070",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 568,
+        "endPage": 570,
         "juz": [
             {
                 "index": "29",
@@ -1493,8 +1484,8 @@ let quarnIndexJsonString = """
         "title": "Nuh",
         "titleAr":"نوح",
         "index": "071",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 570,
+        "endPage": 571,
         "juz": [
             {
                 "index": "29",
@@ -1512,8 +1503,8 @@ let quarnIndexJsonString = """
         "title": "Al-Jinn",
         "titleAr":"الجن",
         "index": "072",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 572,
+        "endPage": 573,
         "juz": [
             {
                 "index": "29",
@@ -1531,8 +1522,8 @@ let quarnIndexJsonString = """
         "title": "Al-Muzzammil",
         "titleAr":"المزمل",
         "index": "073",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 574,
+        "endPage": 575,
         "juz": [
             {
                 "index": "29",
@@ -1550,8 +1541,8 @@ let quarnIndexJsonString = """
         "title": "Al-Muddaththir",
         "titleAr":"المدثر",
         "index": "074",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 575,
+        "endPage": 577,
         "juz": [
             {
                 "index": "29",
@@ -1569,8 +1560,8 @@ let quarnIndexJsonString = """
         "title": "Al-Qiyamah",
         "titleAr":"القيامة",
         "index": "075",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 577,
+        "endPage": 578,
         "juz": [
             {
                 "index": "29",
@@ -1588,8 +1579,8 @@ let quarnIndexJsonString = """
         "title": "Al-Insan",
         "titleAr":"الإنسان",
         "index": "076",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 578,
+        "endPage": 580,
         "juz": [
             {
                 "index": "29",
@@ -1607,8 +1598,8 @@ let quarnIndexJsonString = """
         "title": "Al-Mursalat",
         "titleAr":"المرسلات",
         "index": "077",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 580,
+        "endPage": 581,
         "juz": [
             {
                 "index": "29",
@@ -1626,8 +1617,8 @@ let quarnIndexJsonString = """
         "title": "An-Naba",
         "titleAr":"النبأ",
         "index": "078",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 582,
+        "endPage": 583,
         "juz": [
             {
                 "index": "30",
@@ -1645,8 +1636,8 @@ let quarnIndexJsonString = """
         "title": "An-Naziat",
         "titleAr":"النازعات",
         "index": "079",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 583,
+        "endPage": 584,
         "juz": [
             {
                 "index": "30",
@@ -1664,8 +1655,8 @@ let quarnIndexJsonString = """
         "title": "Abasa",
         "titleAr":"عبس",
         "index": "080",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 585,
+        "endPage": 586,
         "juz": [
             {
                 "index": "30",
@@ -1683,8 +1674,8 @@ let quarnIndexJsonString = """
         "title": "At-Takwir",
         "titleAr":"التكوير",
         "index": "081",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 586,
+        "endPage": 586,
         "juz": [
             {
                 "index": "30",
@@ -1702,8 +1693,8 @@ let quarnIndexJsonString = """
         "title": "Al-Infitar",
         "titleAr":"الإنفطار",
         "index": "082",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 587,
+        "endPage": 587,
         "juz": [
             {
                 "index": "30",
@@ -1721,8 +1712,8 @@ let quarnIndexJsonString = """
         "title": "Al-Mutaffifin",
         "titleAr":"المطففين",
         "index": "083",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 587,
+        "endPage": 589,
         "juz": [
             {
                 "index": "30",
@@ -1740,8 +1731,8 @@ let quarnIndexJsonString = """
         "title": "Al-Inshiqaq",
         "titleAr":"الإنشقاق",
         "index": "084",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 589,
+        "endPage": 590,
         "juz": [
             {
                 "index": "30",
@@ -1759,8 +1750,8 @@ let quarnIndexJsonString = """
         "title": "Al-Buruj",
         "titleAr":"البروج",
         "index": "085",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 590,
+        "endPage": 590,
         "juz": [
             {
                 "index": "30",
@@ -1778,8 +1769,8 @@ let quarnIndexJsonString = """
         "title": "At-Tariq",
         "titleAr":"الطارق",
         "index": "086",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 591,
+        "endPage": 591,
         "juz": [
             {
                 "index": "30",
@@ -1797,8 +1788,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ala",
         "titleAr":"الأعلى",
         "index": "087",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 591,
+        "endPage": 592,
         "juz": [
             {
                 "index": "30",
@@ -1816,8 +1807,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ghashiyah",
         "titleAr":"الغاشية",
         "index": "088",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 592,
+        "endPage": 593,
         "juz": [
             {
                 "index": "30",
@@ -1835,8 +1826,8 @@ let quarnIndexJsonString = """
         "title": "Al-Fajr",
         "titleAr":"الفجر",
         "index": "089",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 503,
+        "endPage": 594,
         "juz": [
             {
                 "index": "30",
@@ -1854,8 +1845,8 @@ let quarnIndexJsonString = """
         "title": "Al-Balad",
         "titleAr":"البلد",
         "index": "090",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 594,
+        "endPage": 595,
         "juz": [
             {
                 "index": "30",
@@ -1873,8 +1864,8 @@ let quarnIndexJsonString = """
         "title": "Ash-Shams",
         "titleAr":"الشمس",
         "index": "091",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 595,
+        "endPage": 595,
         "juz": [
             {
                 "index": "30",
@@ -1892,8 +1883,8 @@ let quarnIndexJsonString = """
         "title": "Al-Lail",
         "titleAr":"الليل",
         "index": "092",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 595,
+        "endPage": 596,
         "juz": [
             {
                 "index": "30",
@@ -1911,8 +1902,8 @@ let quarnIndexJsonString = """
         "title": "Ad-Duha",
         "titleAr":"الضحى",
         "index": "093",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 596,
+        "endPage": 596,
         "juz": [
             {
                 "index": "30",
@@ -1930,8 +1921,8 @@ let quarnIndexJsonString = """
         "title": "Ash-Sharh",
         "titleAr":"الشرح",
         "index": "094",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 596,
+        "endPage": 597,
         "juz": [
             {
                 "index": "30",
@@ -1949,8 +1940,8 @@ let quarnIndexJsonString = """
         "title": "At-Tin",
         "titleAr":"التين",
         "index": "095",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 597,
+        "endPage": 597,
         "juz": [
             {
                 "index": "30",
@@ -1968,8 +1959,8 @@ let quarnIndexJsonString = """
         "title": "Al-Alaq",
         "titleAr":"العلق",
         "index": "096",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 597,
+        "endPage": 598,
         "juz": [
             {
                 "index": "30",
@@ -1987,8 +1978,8 @@ let quarnIndexJsonString = """
         "title": "Al-Qadr",
         "titleAr":"القدر",
         "index": "097",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 598,
+        "endPage": 598,
         "juz": [
             {
                 "index": "30",
@@ -2006,8 +1997,8 @@ let quarnIndexJsonString = """
         "title": "Al-Bayinah",
         "titleAr":"البينة",
         "index": "098",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 598,
+        "endPage": 599,
         "juz": [
             {
                 "index": "30",
@@ -2025,8 +2016,8 @@ let quarnIndexJsonString = """
         "title": "Az-Zalzalah",
         "titleAr":"الزلزلة",
         "index": "099",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 599,
+        "endPage": 599,
         "juz": [
             {
                 "index": "30",
@@ -2044,8 +2035,8 @@ let quarnIndexJsonString = """
         "title": "Al-Adiyat",
         "titleAr":"العاديات",
         "index": "100",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 599,
+        "endPage": 600,
         "juz": [
             {
                 "index": "30",
@@ -2063,8 +2054,8 @@ let quarnIndexJsonString = """
         "title": "Al-Qariah",
         "titleAr":"القارعة",
         "index": "101",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 600,
+        "endPage": 600,
         "juz": [
             {
                 "index": "30",
@@ -2082,8 +2073,8 @@ let quarnIndexJsonString = """
         "title": "Al-Takathur",
         "titleAr":"التكاثر",
         "index": "102",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 600,
+        "endPage": 500,
         "juz": [
             {
                 "index": "30",
@@ -2101,8 +2092,8 @@ let quarnIndexJsonString = """
         "title": "Al-Asr",
         "titleAr":"العصر",
         "index": "103",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 601,
+        "endPage": 601,
         "juz": [
             {
                 "index": "30",
@@ -2120,8 +2111,8 @@ let quarnIndexJsonString = """
         "title": "Al-Humazah",
         "titleAr":"الهمزة",
         "index": "104",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 601,
+        "endPage": 601,
         "juz": [
             {
                 "index": "30",
@@ -2139,8 +2130,8 @@ let quarnIndexJsonString = """
         "title": "Al-Fil",
         "titleAr":"الفيل",
         "index": "105",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 601,
+        "endPage": 601,
         "juz": [
             {
                 "index": "30",
@@ -2158,8 +2149,8 @@ let quarnIndexJsonString = """
         "title": "Quraish",
         "titleAr":"قريش",
         "index": "106",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 602,
+        "endPage": 602,
         "juz": [
             {
                 "index": "30",
@@ -2177,8 +2168,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ma'un",
         "titleAr":"الماعون",
         "index": "107",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 602,
+        "endPage": 602,
         "juz": [
             {
                 "index": "30",
@@ -2196,8 +2187,8 @@ let quarnIndexJsonString = """
         "title": "Al-Kauthar",
         "titleAr":"الكوثر",
         "index": "108",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 602,
+        "endPage": 602,
         "juz": [
             {
                 "index": "30",
@@ -2215,8 +2206,8 @@ let quarnIndexJsonString = """
         "title": "Al-Kafirun",
         "titleAr":"الكافرون",
         "index": "109",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 603,
+        "endPage": 603,
         "juz": [
             {
                 "index": "30",
@@ -2234,8 +2225,8 @@ let quarnIndexJsonString = """
         "title": "An-Nasr",
         "titleAr":"النصر",
         "index": "110",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 603,
+        "endPage": 603,
         "juz": [
             {
                 "index": "30",
@@ -2253,8 +2244,8 @@ let quarnIndexJsonString = """
         "title": "Al-Masad",
         "titleAr":"المسد",
         "index": "111",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 603,
+        "endPage": 603,
         "juz": [
             {
                 "index": "30",
@@ -2272,8 +2263,8 @@ let quarnIndexJsonString = """
         "title": "Al-Ikhlas",
         "titleAr":"الإخلاص",
         "index": "112",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 604,
+        "endPage": 604,
         "juz": [
             {
                 "index": "30",
@@ -2291,8 +2282,8 @@ let quarnIndexJsonString = """
         "title": "Al-Falaq",
         "titleAr":"الفلق",
         "index": "113",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 604,
+        "endPage": 604,
         "juz": [
             {
                 "index": "30",
@@ -2310,8 +2301,8 @@ let quarnIndexJsonString = """
         "title": "An-Nas",
         "titleAr":"الناس",
         "index": "114",
-        "startPage": 0,
-        "endPage": 0,
+        "startPage": 604,
+        "endPage": 604,
         "juz": [
             {
                 "index": "30",

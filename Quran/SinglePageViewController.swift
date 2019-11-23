@@ -50,21 +50,25 @@ class SinglePageViewController: UIViewController, UITextViewDelegate, PMyPlayer 
 
         activityIndicator = ActivityIndicator(view: view, navigationController: nil, tabBarController: nil)
         activityIndicator?.showActivityIndicator()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "disableSwipe"), object: nil)
         QuranApiManager.shared.fetch(pageNumber: pageNumber, for: surahNumber) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(page):
                 self.display(page)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "enableSwipe"), object: nil)
                 break
             case let .failure(error):
                 self.display(error)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "disableSwipe"), object: nil)
             }
             self.activityIndicator?.stopActivityIndicator()
         }
         player.p = self
         player.vc = self
         pageNumberLabel.text = pageNumber.arabicNumbers
-        pageNumberLabel.font = titleLabel.font
+        pageNumberLabel.font = UIFont(name: fontName, size: 17)
+        
         juzLabel.font = UIFont(name: fontName, size: 14)
         if pageNumber != surah.startPage {
             titleLabel.text = nil
@@ -158,6 +162,9 @@ class SinglePageViewController: UIViewController, UITextViewDelegate, PMyPlayer 
             print(ayah)
             highlight(ayahNumber: ayah)
         }
+        
+        // set juz
+        juzLabel.text = showJuzNumber(page.ayahs[0].juz)
     }
 
     private func play(from ayahNumber: Int) {

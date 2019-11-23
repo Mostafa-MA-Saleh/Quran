@@ -24,6 +24,7 @@
 		06D06F542380C5EA003696FD /* QUR_STD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 064783F3236A3B2B008BAC84 /* QUR_STD.TTF */; };
 		06D06F562380CD99003696FD /* SurahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D06F552380CD99003696FD /* SurahViewController.swift */; };
 		0A886D862378BA8C00A3F864 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A886D852378BA8C00A3F864 /* Page.swift */; };
+		0AFD8AF623896C2200324DE5 /* MoveToPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD8AF523896C2200324DE5 /* MoveToPageViewController.swift */; };
 		5EFA28AA970335D20216CD02 /* Pods_Quran.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0280B728F62AC9AB1A2FC160 /* Pods_Quran.framework */; };
 		849E9109234E174300FD4D15 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E9108234E174300FD4D15 /* ActivityIndicator.swift */; };
 		849E910B234E182800FD4D15 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E910A234E182800FD4D15 /* PlayerStatus.swift */; };
@@ -56,6 +57,7 @@
 		06CAA76E2369C2E20094CA7A /* QuranIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranIndex.swift; sourceTree = "<group>"; };
 		06D06F552380CD99003696FD /* SurahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahViewController.swift; sourceTree = "<group>"; };
 		0A886D852378BA8C00A3F864 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		0AFD8AF523896C2200324DE5 /* MoveToPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveToPageViewController.swift; sourceTree = "<group>"; };
 		231BEF7B05174ADA225FD7B9 /* Pods-Quran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quran/Pods-Quran.release.xcconfig"; sourceTree = "<group>"; };
 		686929116F17D812FBF8A2EE /* Pods-Quran.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.debug.xcconfig"; path = "Target Support Files/Pods-Quran/Pods-Quran.debug.xcconfig"; sourceTree = "<group>"; };
 		849E9108234E174300FD4D15 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				0685B71C235E741D0029C113 /* TafseerViewController.swift */,
 				0625D726236DF228008F593E /* SettingsViewController.swift */,
 				06D06F552380CD99003696FD /* SurahViewController.swift */,
+				0AFD8AF523896C2200324DE5 /* MoveToPageViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				0685B71D235E741D0029C113 /* TafseerViewController.swift in Sources */,
 				0685B71F235E75A20029C113 /* TafseerApiManager.swift in Sources */,
 				06CAA76F2369C2E20094CA7A /* QuranIndex.swift in Sources */,
+				0AFD8AF623896C2200324DE5 /* MoveToPageViewController.swift in Sources */,
 				0A886D862378BA8C00A3F864 /* Page.swift in Sources */,
 				849E9109234E174300FD4D15 /* ActivityIndicator.swift in Sources */,
 				06D06F562380CD99003696FD /* SurahViewController.swift in Sources */,
