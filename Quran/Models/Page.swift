@@ -47,7 +47,7 @@ struct Ayah: Codable {
     var surah: Surah
     var numberInSurah, juz, manzil, page: Int
     var ruku, hizbQuarter: Int
-    var sajda: Bool
+    //var sajda: Bool
 }
 
 struct Surah: Codable {

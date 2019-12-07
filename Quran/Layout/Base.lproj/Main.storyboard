@@ -172,23 +172,9 @@
                         <viewLayoutGuide key="safeArea" id="Cwh-xF-CMJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="الفهرس" image="list.dash" catalog="system" id="v8D-D2-yYh"/>
-                    <navigationItem key="navigationItem" title="فهرس القران الكريم" id="Gti-Yr-i1B">
-                        <barButtonItem key="backBarButtonItem" title=" " id="pCF-ed-O6q"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="5z6-0h-1YT">
-                            <connections>
-                                <action selector="didClickBookmark" destination="mer-bQ-TbM" id="aLg-2B-QEp"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="outline_settings_applications_black_36pt_" id="fbu-gX-oPq">
-                            <connections>
-                                <segue destination="NCO-pY-yRU" kind="show" id="y4c-nG-90s"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="searchTextField" destination="EnS-X3-Xb3" id="h6Q-OY-5lr"/>
                         <outlet property="tableView" destination="fYy-nD-lpg" id="luD-1g-KYx"/>
-                        <segue destination="V4P-td-41Z" kind="show" identifier="BookmarkSegue" id="ir5-25-kGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKM-y4-FoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -504,12 +490,22 @@
             </objects>
             <point key="canvasLocation" x="-1422" y="-230"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="4Q0-gy-ub0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jxL-6x-haq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tabBarController id="00U-IA-AP8" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="2pK-tU-2PA"/>
+                <tabBarController id="00U-IA-AP8" customClass="MainViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2pK-tU-2PA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="5z6-0h-1YT">
+                            <connections>
+                                <action selector="bookMarkAction:" destination="00U-IA-AP8" id="j5n-qo-A2e"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="outline_settings_applications_black_36pt_" id="fbu-gX-oPq">
+                            <connections>
+                                <segue destination="NCO-pY-yRU" kind="show" id="y4c-nG-90s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yR3-6e-mCJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -518,8 +514,10 @@
                     <connections>
                         <segue destination="mer-bQ-TbM" kind="relationship" relationship="viewControllers" id="vno-Vs-E6p"/>
                         <segue destination="zwD-EN-qgG" kind="relationship" relationship="viewControllers" id="5Zr-Y2-fL0"/>
+                        <segue destination="V4P-td-41Z" kind="show" identifier="BookmarkSegue" id="m5M-3D-wNT"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxL-6x-haq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-574" y="-229"/>
         </scene>
@@ -533,6 +531,6 @@
         <image name="play" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O41-UT-d9h"/>
+        <segue reference="m5M-3D-wNT"/>
     </inferredMetricsTieBreakers>
 </document>

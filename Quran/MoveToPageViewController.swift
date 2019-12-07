@@ -26,6 +26,8 @@ class MoveToPageViewController: UIViewController {
         //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
+        pageTextField.keyboardType = .asciiCapableNumberPad
+
     }
     
     @objc func dismissKeyboard() {

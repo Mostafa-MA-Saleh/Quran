@@ -470,7 +470,7 @@ class SinglePageViewController: UIViewController, UITextViewDelegate, PMyPlayer 
         case 14:
             return "الجزء الرابع عشر"
         case 15:
-            return "الجزء الخامص عشر"
+            return "الجزء الخامس عشر"
         case 16:
             return "الجزء السادس عشر"
         case 17:
